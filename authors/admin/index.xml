@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andre Frankenthal</title>
+    <link>https://frankenthal.dev/authors/admin/</link>
+    <description>Recent content on Andre Frankenthal</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    
+	    <atom:link href="https://frankenthal.dev/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://frankenthal.dev/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/authors/admin/</guid>
+      <description>&lt;p&gt;Andre Frankenthal is a PhD Candidate in experimental high-energy Physics at Cornell University. Originally from Rio de Janeiro, Brazil, he holds a BA from Reed College, in Portland, Oregon, and a MSc from Cornell. Andre works in two different experiments searching for dark matter using complementary strategies: with the larger &lt;a href=&#34;https://cms.cern/collaboration&#34; target=&#34;_blank&#34;&gt;CMS Collaboration&lt;/a&gt; smashing protons together at the LHC, and with a smaller team at Laboratori Nazionali di Frascati, Italy, looking for dark photons (&lt;a href=&#34;http://padme.lnf.infn.it/&#34; target=&#34;_blank&#34;&gt;PADME Collaboration&lt;/a&gt;). His work revolves around data analysis, detector data reconstruction, and upgrade studies for the next generation of high-energy physics detectors, in particular the CMS pixel detector.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

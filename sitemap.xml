@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://frankenthal.dev/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/post/light-by-light/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/admin/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/post/</loc>
+    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication_types/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/</loc>
+    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/talk/</loc>
+    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
