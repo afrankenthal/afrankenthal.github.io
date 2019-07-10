@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. Grange on Andre Frankenthal</title>
+    <link>https://frankenthal.dev/authors/j.-grange/</link>
+    <description>Recent content in J. Grange on Andre Frankenthal</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://frankenthal.dev/authors/j.-grange/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Muon (g-2) Technical Design Report</title>
+      <link>https://frankenthal.dev/publication/grange-2015-fou/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/grange-2015-fou/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

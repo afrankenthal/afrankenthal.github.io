@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://frankenthal.dev/</loc>
-    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://frankenthal.dev/categories/</loc>
     <lastmod>2019-07-08T00:20:41-05:00</lastmod>
     <priority>0</priority>
@@ -20,14 +14,32 @@
   </url>
   
   <url>
+    <loc>https://frankenthal.dev/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frankenthal.dev/categories/paper-review/</loc>
     <lastmod>2019-07-08T00:20:41-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://frankenthal.dev/authors/admin/</loc>
-    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+    <loc>https://frankenthal.dev/authors/others/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication_types/2/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/a.-frankenthal/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -37,22 +49,83 @@
   </url>
   
   <url>
+    <loc>https://frankenthal.dev/publication/frankenthal-2018-yvf/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication_types/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication_types/1/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/p.-albicocco/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/albicocco-2018-jal/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/l.-p.-alonzi/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/alonzi-2016-vos/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/i.-logashenko/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/j.-grange/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/grange-2015-fou/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/logashenko-2015-xab/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/admin/</loc>
+    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frankenthal.dev/post/</loc>
     <lastmod>2019-05-06T17:54:11+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frankenthal.dev/publication_types/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://frankenthal.dev/publication/</loc>
+    <loc>https://frankenthal.dev/talk/</loc>
     <lastmod>2019-05-06T17:54:11+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frankenthal.dev/talk/</loc>
+    <loc>https://frankenthal.dev/publication/</loc>
     <lastmod>2019-05-06T17:54:11+01:00</lastmod>
   </url>
   

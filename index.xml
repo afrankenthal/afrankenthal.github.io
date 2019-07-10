@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Andre Frankenthal</title>
+    <title>Publications on Andre Frankenthal</title>
     <link>https://frankenthal.dev/</link>
-    <description>Recent content on Andre Frankenthal</description>
+    <description>Recent content in Publications on Andre Frankenthal</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Jul 2019 23:21:30 -0500</lastBuildDate>
@@ -128,6 +128,51 @@
 
 &lt;p&gt;To conclude, the measurement of light-by-light scattering by ATLAS is an exciting result which offers us a direct glimpse into the stark differences between classical and quantum physics in an accessible (and dare I say) amusing way!&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Characterization and performance of PADME’s Cherenkov-based small-angle calorimeter</title>
+      <link>https://frankenthal.dev/publication/frankenthal-2018-yvf/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/frankenthal-2018-yvf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The PADME experiment</title>
+      <link>https://frankenthal.dev/publication/albicocco-2018-jal/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/albicocco-2018-jal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The calorimeter system of the new muon g -2 experiment at Fermilab</title>
+      <link>https://frankenthal.dev/publication/alonzi-2016-vos/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Muon (g-2) Technical Design Report</title>
+      <link>https://frankenthal.dev/publication/grange-2015-fou/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/grange-2015-fou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Measurement of the Anomalous Magnetic Moment of the Muon at Fermilab</title>
+      <link>https://frankenthal.dev/publication/logashenko-2015-xab/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/logashenko-2015-xab/</guid>
+      <description></description>
     </item>
     
   </channel>
