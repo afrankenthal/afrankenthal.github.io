@@ -28,9 +28,8 @@
   
     
   
-  <meta name="description" content="For some reason when running my own local version of tmux on lxplus, it is possible to create a new session and detach and reattach to it successfully while in the same ssh session. However, when logging out of lxplus and then back in, and upon trying to reattach to the tmux session, this error is shown:
- open terminal failed: missing or unsuitable terminal: xterm-256color
- Finally after a year I have traced the problem to the root cause, with this very helpful reference:">
+  <meta name="description" content="Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
+When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:">
 
   
   <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/post/tmux-on-lxplus/">
@@ -112,9 +111,8 @@
   <meta property="og:site_name" content="Andre Frankenthal">
   <meta property="og:url" content="https://frankenthal.dev/post/tmux-on-lxplus/">
   <meta property="og:title" content="Tmux on lxplus | Andre Frankenthal">
-  <meta property="og:description" content="For some reason when running my own local version of tmux on lxplus, it is possible to create a new session and detach and reattach to it successfully while in the same ssh session. However, when logging out of lxplus and then back in, and upon trying to reattach to the tmux session, this error is shown:
- open terminal failed: missing or unsuitable terminal: xterm-256color
- Finally after a year I have traced the problem to the root cause, with this very helpful reference:"><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
+  <meta property="og:description" content="Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
+When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:"><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
   <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-10-19T23:14:25-04:00">
@@ -546,17 +544,19 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <p>For some reason when running my own local version of tmux on lxplus, it is possible to create a new session and detach and reattach to it successfully while in the <em>same</em> ssh session. However, when logging out of lxplus and then back in, and upon trying to reattach to the tmux session, this error is shown:</p>
+      <p>Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).</p>
+
+<p>When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the <em>same</em> ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:</p>
 
 <blockquote>
 <p>open terminal failed: missing or unsuitable terminal: xterm-256color</p>
 </blockquote>
 
-<p>Finally after a year I have traced the problem to the root cause, with this very helpful reference:</p>
+<p>After a year I have finally traced the problem to the root cause, with this very helpful reference:</p>
 
 <p><a href="https://www.mail-archive.com/tmux-users@lists.sourceforge.net/msg01272.html" target="_blank">https://www.mail-archive.com/tmux-users@lists.sourceforge.net/msg01272.html</a></p>
 
-<p>The problem is the &lsquo;terminfo database entry can’t be found for “xterm”’. The solution is simple: just export in bash the terminfo location before starting the tmux session:</p>
+<p>The issue is the &lsquo;terminfo database entry can’t be found for “xterm”’. The solution is simple: just export in bash the terminfo location before starting the tmux session:</p>
 
 <pre><code>$ export TERMINFO=/usr/share/terminfo
 $ cd ~/programs/tmux
@@ -570,7 +570,7 @@ $ cd ~/programs/tmux
 $ ./tmux a
 </code></pre>
 
-<p>Might also just copy the export command to the .bashrc file.</p>
+<p>You can also just copy the export command to the .bashrc file.</p>
 
 <p>More details about diagnostics: I think the problem might be that I accidentally used some native libraries to compile the local tmux (in /usr/lib/ and /usr/lib64) which was seen from running ‘ldd ./tmux’, though I’m not sure. Could also be that the ncurses version used was different than the local one I downloaded. Not really sure, but in any case exporting the TERMINFO info solves it.</p>
 

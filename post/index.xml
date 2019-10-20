@@ -49,17 +49,19 @@ rm -rf xrootd-4.8.3
       <pubDate>Sat, 19 Oct 2019 23:14:25 -0400</pubDate>
       
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
-      <description>&lt;p&gt;For some reason when running my own local version of tmux on lxplus, it is possible to create a new session and detach and reattach to it successfully while in the &lt;em&gt;same&lt;/em&gt; ssh session. However, when logging out of lxplus and then back in, and upon trying to reattach to the tmux session, this error is shown:&lt;/p&gt;
+      <description>&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).&lt;/p&gt;
+
+&lt;p&gt;When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the &lt;em&gt;same&lt;/em&gt; ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;open terminal failed: missing or unsuitable terminal: xterm-256color&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Finally after a year I have traced the problem to the root cause, with this very helpful reference:&lt;/p&gt;
+&lt;p&gt;After a year I have finally traced the problem to the root cause, with this very helpful reference:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.mail-archive.com/tmux-users@lists.sourceforge.net/msg01272.html&#34; target=&#34;_blank&#34;&gt;https://www.mail-archive.com/tmux-users@lists.sourceforge.net/msg01272.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;The problem is the &amp;lsquo;terminfo database entry can’t be found for “xterm”’. The solution is simple: just export in bash the terminfo location before starting the tmux session:&lt;/p&gt;
+&lt;p&gt;The issue is the &amp;lsquo;terminfo database entry can’t be found for “xterm”’. The solution is simple: just export in bash the terminfo location before starting the tmux session:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ export TERMINFO=/usr/share/terminfo
 $ cd ~/programs/tmux
@@ -73,7 +75,7 @@ $ cd ~/programs/tmux
 $ ./tmux a
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Might also just copy the export command to the .bashrc file.&lt;/p&gt;
+&lt;p&gt;You can also just copy the export command to the .bashrc file.&lt;/p&gt;
 
 &lt;p&gt;More details about diagnostics: I think the problem might be that I accidentally used some native libraries to compile the local tmux (in /usr/lib/ and /usr/lib64) which was seen from running ‘ldd ./tmux’, though I’m not sure. Could also be that the ncurses version used was different than the local one I downloaded. Not really sure, but in any case exporting the TERMINFO info solves it.&lt;/p&gt;
 </description>

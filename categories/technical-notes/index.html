@@ -411,9 +411,8 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
     <h2><a href="/post/tmux-on-lxplus/">Tmux on lxplus</a></h2>
     <div class="article-style">
       
-      For some reason when running my own local version of tmux on lxplus, it is possible to create a new session and detach and reattach to it successfully while in the same ssh session. However, when logging out of lxplus and then back in, and upon trying to reattach to the tmux session, this error is shown:
- open terminal failed: missing or unsuitable terminal: xterm-256color
- Finally after a year I have traced the problem to the root cause, with this very helpful reference:
+      Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
+When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:
       
     </div>
   </div>
