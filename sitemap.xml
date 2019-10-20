@@ -3,14 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://frankenthal.dev/categories/</loc>
-    <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+    <loc>https://frankenthal.dev/project/arduino/</loc>
+    <lastmod>2019-10-19T18:55:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/project/</loc>
+    <lastmod>2019-10-19T18:55:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/</loc>
+    <lastmod>2019-10-19T18:55:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/tags/</loc>
+    <lastmod>2019-10-19T18:55:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/tags/outreach/</loc>
+    <lastmod>2019-10-19T18:55:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/project/particlebites/</loc>
+    <lastmod>2019-10-19T17:56:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/project/hepmap/</loc>
+    <lastmod>2019-10-19T17:56:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/project/cms/</loc>
+    <lastmod>2019-10-19T17:55:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/tags/experiment/</loc>
+    <lastmod>2019-10-19T17:55:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/project/padme/</loc>
+    <lastmod>2019-10-19T17:32:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/categories/</loc>
     <lastmod>2019-07-08T00:20:41-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -25,20 +74,20 @@
   </url>
   
   <url>
-    <loc>https://frankenthal.dev/authors/others/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <loc>https://frankenthal.dev/authors/et-al./</loc>
+    <lastmod>2019-03-01T06:57:05+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/publication_types/2/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T06:57:05+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/authors/a.-frankenthal/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T06:57:05+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -50,19 +99,24 @@
   
   <url>
     <loc>https://frankenthal.dev/publication/frankenthal-2018-yvf/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T06:57:05+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/publication_types/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T06:57:05+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/publication_types/1/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/frankenthal-2019-searching/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -85,6 +139,65 @@
   <url>
     <loc>https://frankenthal.dev/publication/alonzi-2016-vos/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/a.-anastasi/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/a.-fioretti/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/a.t.-fienberg/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/c.-ferrari/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/c.-gabbanini/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/d.-cauz/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/l.p.-alonzi/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/r.-bjorkquist/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/authors/r.-fatemi/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/publication/fienberg-2015/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -127,11 +240,6 @@
   <url>
     <loc>https://frankenthal.dev/publication/</loc>
     <lastmod>2019-05-06T17:54:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frankenthal.dev/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> et al. on Andre Frankenthal</title>
+    <link>https://frankenthal.dev/authors/et-al./</link>
+    <description>Recent content in  et al. on Andre Frankenthal</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Mar 2019 06:57:05 +0000</lastBuildDate>
+    
+	    <atom:link href="https://frankenthal.dev/authors/et-al./index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Characterization and Performance of PADME’s Cherenkov-Based Small-Angle Calorimeter</title>
+      <link>https://frankenthal.dev/publication/frankenthal-2018-yvf/</link>
+      <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/frankenthal-2018-yvf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The PADME experiment</title>
+      <link>https://frankenthal.dev/publication/albicocco-2018-jal/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/albicocco-2018-jal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The calorimeter system of the new muon g -2 experiment at Fermilab</title>
+      <link>https://frankenthal.dev/publication/alonzi-2016-vos/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Studies of an array of PbF2 Cherenkov crystals with large-area SiPM readout</title>
+      <link>https://frankenthal.dev/publication/fienberg-2015/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/fienberg-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Muon (g-2) Technical Design Report</title>
+      <link>https://frankenthal.dev/publication/grange-2015-fou/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/grange-2015-fou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Measurement of the Anomalous Magnetic Moment of the Muon at Fermilab</title>
+      <link>https://frankenthal.dev/publication/logashenko-2015-xab/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/logashenko-2015-xab/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -11,12 +11,22 @@
     
     
     <item>
-      <title>Characterization and performance of PADME’s Cherenkov-based small-angle calorimeter</title>
+      <title>Characterization and Performance of PADME’s Cherenkov-Based Small-Angle Calorimeter</title>
       <link>https://frankenthal.dev/publication/frankenthal-2018-yvf/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
       
       <guid>https://frankenthal.dev/publication/frankenthal-2018-yvf/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Searching for Dark Photons with PADME</title>
+      <link>https://frankenthal.dev/publication/frankenthal-2019-searching/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/frankenthal-2019-searching/</guid>
+      <description>&lt;p&gt;Proceedings in preparation&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,6 +44,15 @@
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Studies of an array of PbF2 Cherenkov crystals with large-area SiPM readout</title>
+      <link>https://frankenthal.dev/publication/fienberg-2015/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/publication/fienberg-2015/</guid>
       <description></description>
     </item>
     
