@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Andre Frankenthal</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Jul 2019 23:21:30 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
     
 	    <atom:link href="https://frankenthal.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>technical notes</title>
+      <link>https://frankenthal.dev/categories/technical-notes/</link>
+      <pubDate>Sat, 19 Oct 2019 23:21:01 -0400</pubDate>
+      
+      <guid>https://frankenthal.dev/categories/technical-notes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>paper review</title>
