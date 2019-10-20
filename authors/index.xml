@@ -12,20 +12,20 @@
     
     
     <item>
-      <title> et al.</title>
-      <link>https://frankenthal.dev/authors/et-al./</link>
-      <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      
-      <guid>https://frankenthal.dev/authors/et-al./</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>A. Frankenthal</title>
       <link>https://frankenthal.dev/authors/a.-frankenthal/</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
       
       <guid>https://frankenthal.dev/authors/a.-frankenthal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>et al.</title>
+      <link>https://frankenthal.dev/authors/et-al./</link>
+      <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
+      
+      <guid>https://frankenthal.dev/authors/et-al./</guid>
       <description></description>
     </item>
     

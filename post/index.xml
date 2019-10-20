@@ -30,11 +30,11 @@ popd
 rm -rf xrootd-4.8.3 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Check whatever version of xrootd you have and substitute the numbers above. You can find the xrd_setup.py file &lt;a href=&#34;static/files/xrd_setup.py&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check whatever version of xrootd you have and substitute the numbers above. You can find the xrd_setup.py file &lt;a href=&#34;https://frankenthal.dev/files/xrd_setup.py&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;(or from here &lt;a href=&#34;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&#34; target=&#34;_blank&#34;&gt;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(Or from: &lt;a href=&#34;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&#34; target=&#34;_blank&#34;&gt;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;My pyxrootd ended up being installed here:&lt;/p&gt;
+&lt;p&gt;My pyxrootd ended up installed here:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;/usr/local/lib/python3.7/site-packages/pyxrootd-4.8.3-py3.7-macosx-10.12-x86_64.egg/
 &lt;/code&gt;&lt;/pre&gt;
