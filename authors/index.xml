@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Andre Frankenthal</title>
+    <title>Authors | Andre Frankenthal</title>
     <link>https://frankenthal.dev/authors/</link>
-    <description>Recent content in Authors on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2019 06:57:05 +0000</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/authors/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2019 06:57:05 +0000</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>https://frankenthal.dev/authors/</link>
+    </image>
     
     <item>
       <title>A. Frankenthal</title>
       <link>https://frankenthal.dev/authors/a.-frankenthal/</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/a.-frankenthal/</guid>
       <description></description>
     </item>
@@ -24,7 +24,6 @@
       <title>et al.</title>
       <link>https://frankenthal.dev/authors/et-al./</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/et-al./</guid>
       <description></description>
     </item>
@@ -33,7 +32,6 @@
       <title>P. Albicocco</title>
       <link>https://frankenthal.dev/authors/p.-albicocco/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/p.-albicocco/</guid>
       <description></description>
     </item>
@@ -42,7 +40,6 @@
       <title>L. P. Alonzi</title>
       <link>https://frankenthal.dev/authors/l.-p.-alonzi/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/l.-p.-alonzi/</guid>
       <description></description>
     </item>
@@ -51,7 +48,6 @@
       <title>A. Anastasi</title>
       <link>https://frankenthal.dev/authors/a.-anastasi/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/a.-anastasi/</guid>
       <description></description>
     </item>
@@ -60,7 +56,6 @@
       <title>A. Fioretti</title>
       <link>https://frankenthal.dev/authors/a.-fioretti/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/a.-fioretti/</guid>
       <description></description>
     </item>
@@ -69,7 +64,6 @@
       <title>A.T. Fienberg</title>
       <link>https://frankenthal.dev/authors/a.t.-fienberg/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/a.t.-fienberg/</guid>
       <description></description>
     </item>
@@ -78,7 +72,6 @@
       <title>C. Ferrari</title>
       <link>https://frankenthal.dev/authors/c.-ferrari/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/c.-ferrari/</guid>
       <description></description>
     </item>
@@ -87,7 +80,6 @@
       <title>C. Gabbanini</title>
       <link>https://frankenthal.dev/authors/c.-gabbanini/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/c.-gabbanini/</guid>
       <description></description>
     </item>
@@ -96,7 +88,6 @@
       <title>D. Cauz</title>
       <link>https://frankenthal.dev/authors/d.-cauz/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/d.-cauz/</guid>
       <description></description>
     </item>
@@ -105,7 +96,6 @@
       <title>L.P. Alonzi</title>
       <link>https://frankenthal.dev/authors/l.p.-alonzi/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/l.p.-alonzi/</guid>
       <description></description>
     </item>
@@ -114,7 +104,6 @@
       <title>R. Bjorkquist</title>
       <link>https://frankenthal.dev/authors/r.-bjorkquist/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/r.-bjorkquist/</guid>
       <description></description>
     </item>
@@ -123,7 +112,6 @@
       <title>R. Fatemi</title>
       <link>https://frankenthal.dev/authors/r.-fatemi/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/r.-fatemi/</guid>
       <description></description>
     </item>
@@ -132,7 +120,6 @@
       <title>I. Logashenko</title>
       <link>https://frankenthal.dev/authors/i.-logashenko/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/i.-logashenko/</guid>
       <description></description>
     </item>
@@ -141,7 +128,6 @@
       <title>J. Grange</title>
       <link>https://frankenthal.dev/authors/j.-grange/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/j.-grange/</guid>
       <description></description>
     </item>
@@ -150,7 +136,6 @@
       <title></title>
       <link>https://frankenthal.dev/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/authors/admin/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a PhD Candidate in experimental high-energy Physics at Cornell University. Originally from Rio de Janeiro, Brazil, I hold a B.A. from Reed College, in Portland, Oregon, and a M.S. from Cornell. I work in two different experiments searching for dark matter using complementary strategies: with the larger &lt;a href=&#34;https://cms.cern/collaboration&#34; target=&#34;_blank&#34;&gt;CMS Collaboration&lt;/a&gt; smashing protons together at the LHC, and with a smaller team at Laboratori Nazionali di Frascati, Italy, looking for dark photons (&lt;a href=&#34;http://padme.lnf.infn.it/&#34; target=&#34;_blank&#34;&gt;PADME Collaboration&lt;/a&gt;). My work revolves around data analysis, detector data reconstruction, and upgrade studies for the next generation of high-energy physics detectors, in particular the CMS pixel detector.&lt;/p&gt;
 </description>

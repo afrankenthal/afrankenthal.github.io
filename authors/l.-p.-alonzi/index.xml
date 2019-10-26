@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>L. P. Alonzi on Andre Frankenthal</title>
+    <title>L. P. Alonzi | Andre Frankenthal</title>
     <link>https://frankenthal.dev/authors/l.-p.-alonzi/</link>
-    <description>Recent content in L. P. Alonzi on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/authors/l.-p.-alonzi/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/authors/l.-p.-alonzi/index.xml" rel="self" type="application/rss+xml" />
+    <description>L. P. Alonzi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>L. P. Alonzi</title>
+      <link>https://frankenthal.dev/authors/l.-p.-alonzi/</link>
+    </image>
     
     <item>
       <title>The calorimeter system of the new muon g -2 experiment at Fermilab</title>
       <link>https://frankenthal.dev/publication/alonzi-2016-vos/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
       <description></description>
     </item>

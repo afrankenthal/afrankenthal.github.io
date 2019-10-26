@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
 
   
 
@@ -39,8 +39,6 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
 
   
-
-  
   
   
   <meta name="theme-color" content="#3f51b5">
@@ -71,6 +69,8 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
     
 
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
 
     
 
@@ -78,13 +78,14 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.199d26de742c3403292a4e23eb820897.css">
+  <link rel="stylesheet" href="/css/academic.min.370cd933af6ddfd22fe21198e89f4d22.css">
 
   
 
@@ -94,8 +95,8 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://frankenthal.dev/post/pyxrootd-bindings-in-macos/">
@@ -107,6 +108,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Andre Frankenthal">
@@ -117,10 +119,74 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 # issue with python3 bindings, see https://sft.its.cern.ch/jira/browse/SPI-1198 wget https://github.com/xrootd/xrootd/archive/v4.8.3.tar.gz tar zxf v4.8.3.tar.gz &amp;&amp; rm -f v4.8.3.tar.gz cp xrd_setup.py xrootd-4.8.3/bindings/python/ pushd xrootd-4.8.3/bindings/python/ python xrd_setup.py install popd rm -rf xrootd-4.8.3  Check whatever version of xrootd you have and substitute the numbers above."><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
   <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-10-19T23:21:01-04:00">
+    
+      <meta property="article:published_time" content="2019-10-19T23:21:01-04:00">
+    
+    <meta property="article:modified_time" content="2019-10-26T15:50:32-04:00">
   
-  <meta property="article:modified_time" content="2019-10-19T23:21:01-04:00">
+
   
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://frankenthal.dev/post/pyxrootd-bindings-in-macos/"
+  },
+  "headline": "Pyxrootd bindings on macOS",
+  
+  "datePublished": "2019-10-19T23:21:01-04:00",
+  "dateModified": "2019-10-26T15:50:32-04:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Andre Frankenthal"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Andre Frankenthal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://frankenthal.dev/img/icon-512.png"
+    }
+  },
+  "description": "The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).\nAdapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh\n# issue with python3 bindings, see https://sft.its.cern.ch/jira/browse/SPI-1198 wget https://github.com/xrootd/xrootd/archive/v4.8.3.tar.gz tar zxf v4.8.3.tar.gz \u0026amp;\u0026amp; rm -f v4.8.3.tar.gz cp xrd_setup.py xrootd-4.8.3/bindings/python/ pushd xrootd-4.8.3/bindings/python/ python xrd_setup.py install popd rm -rf xrootd-4.8.3  Check whatever version of xrootd you have and substitute the numbers above."
+}
+</script>
+
+  
+
+  
+
 
   
 
@@ -135,8 +201,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -154,7 +219,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -171,7 +236,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -364,7 +429,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 </nav>
 
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+  <article class="article">
 
   
 
@@ -385,7 +450,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Pyxrootd bindings on macOS</h1>
+  <h1>Pyxrootd bindings on macOS</h1>
 
   
 
@@ -393,9 +458,6 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
     
 
 
-
-<meta content="2019-10-19 23:21:01 -0400 EDT" itemprop="datePublished">
-<meta content="2019-10-19 23:21:01 -0400 EDT" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -407,8 +469,10 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
     
     
       
+          Last updated on
+      
     
-    <time>Oct 19, 2019</time>
+    Oct 26, 2019
   </span>
   
 
@@ -423,13 +487,13 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
   
   
+  
 
   
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder"></i>
-    <a href="/categories/technical-notes/">technical notes</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/categories/technical-notes/">technical notes</a></span>
   
 
   
@@ -545,7 +609,7 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
 
   <div class="article-container">
 
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       <p>The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).</p>
 
 <p>Adapted from: <a href="https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh" target="_blank">https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh</a></p>
@@ -576,6 +640,9 @@ rm -rf xrootd-4.8.3
     
 
 
+    
+
+
 
     
       
@@ -593,21 +660,22 @@ rm -rf xrootd-4.8.3
 
 
 
+
   
   
   
     
   
   
-  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  <div class="media author-card">
     
-      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/e1ded11e4d1b8c1dde405aaf6e0a660b?s=200')" itemprop="image" alt="Avatar">
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/e1ded11e4d1b8c1dde405aaf6e0a660b?s=200')" alt="Avatar">
     
 
     <div class="media-body">
-      <h5 class="card-title" itemprop="name"><a href="https://frankenthal.dev/">Andre Frankenthal</a></h5>
+      <h5 class="card-title"><a href="https://frankenthal.dev/">Andre Frankenthal</a></h5>
       <h6 class="card-subtitle">PhD Candidate in Physics</h6>
-      <p class="card-text" itemprop="description">I search for dark matter.</p>
+      <p class="card-text">I search for dark matter.</p>
       <ul class="network-icon" aria-hidden="true">
         
           
@@ -622,7 +690,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="/#contact" >
+            <a href="/#contact" >
               <i class="fas fa-envelope"></i>
             </a>
           </li>
@@ -639,7 +707,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="https://www.linkedin.com/in/andre-frankenthal-91008169" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/in/andre-frankenthal-91008169" target="_blank" rel="noopener">
               <i class="fab fa-linkedin"></i>
             </a>
           </li>
@@ -656,7 +724,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="https://github.com/afrankenthal" target="_blank" rel="noopener">
+            <a href="https://github.com/afrankenthal" target="_blank" rel="noopener">
               <i class="fab fa-github"></i>
             </a>
           </li>
@@ -671,7 +739,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="https://orcid.org/0000-0002-2583-5982" target="_blank" rel="noopener">
+            <a href="https://orcid.org/0000-0002-2583-5982" target="_blank" rel="noopener">
               <i class="ai ai-orcid"></i>
             </a>
           </li>
@@ -686,7 +754,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="https://inspirehep.net/author/profile/A.Frankenthal.1" target="_blank" rel="noopener">
+            <a href="https://inspirehep.net/author/profile/A.Frankenthal.1" target="_blank" rel="noopener">
               <i class="ai ai-inspire"></i>
             </a>
           </li>
@@ -701,7 +769,7 @@ rm -rf xrootd-4.8.3
             
           
           <li>
-            <a itemprop="sameAs" href="/files/CV_AndreFrankenthal.pdf" >
+            <a href="/files/CV_AndreFrankenthal.pdf" >
               <i class="ai ai-cv"></i>
             </a>
           </li>
@@ -719,6 +787,14 @@ rm -rf xrootd-4.8.3
     
 
     
+<section id="comments">
+  
+    <div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
+
+  
+</section>
+
 
 
   </div>
@@ -756,9 +832,7 @@ rm -rf xrootd-4.8.3
 
     
     
-
-    
-    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
     
 
     
@@ -813,6 +887,9 @@ rm -rf xrootd-4.8.3
 
     
     
+
+    
+    
     
     
     
@@ -825,7 +902,7 @@ rm -rf xrootd-4.8.3
     
     
     
-    <script src="/js/academic.min.8cd55d839906ab9f8f6514a7081b20c1.js"></script>
+    <script src="/js/academic.min.f92d7215d2132cd354f657f0bc9cc542.js"></script>
 
     
 

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Andre Frankenthal</title>
+    <title>Publications | Andre Frankenthal</title>
     <link>https://frankenthal.dev/</link>
-    <description>Recent content in Publications on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>Publications</title>
+      <link>https://frankenthal.dev/</link>
+    </image>
     
     <item>
       <title>Pyxrootd bindings on macOS</title>
       <link>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</link>
       <pubDate>Sat, 19 Oct 2019 23:21:01 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</guid>
       <description>&lt;p&gt;The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).&lt;/p&gt;
 
@@ -48,7 +48,6 @@ rm -rf xrootd-4.8.3
       <title>Tmux on lxplus</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus/</link>
       <pubDate>Sat, 19 Oct 2019 23:14:25 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
       <description>&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).&lt;/p&gt;
 
@@ -86,7 +85,6 @@ $ ./tmux a
       <title>Arduino Series</title>
       <link>https://frankenthal.dev/project/arduino/</link>
       <pubDate>Sat, 19 Oct 2019 18:55:58 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/arduino/</guid>
       <description></description>
     </item>
@@ -95,7 +93,6 @@ $ ./tmux a
       <title>ParticleBites</title>
       <link>https://frankenthal.dev/project/particlebites/</link>
       <pubDate>Sat, 19 Oct 2019 17:56:18 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/particlebites/</guid>
       <description></description>
     </item>
@@ -104,7 +101,6 @@ $ ./tmux a
       <title>HEPMAP</title>
       <link>https://frankenthal.dev/project/hepmap/</link>
       <pubDate>Sat, 19 Oct 2019 17:56:09 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/hepmap/</guid>
       <description></description>
     </item>
@@ -113,7 +109,6 @@ $ ./tmux a
       <title>CMS Experiment</title>
       <link>https://frankenthal.dev/project/cms/</link>
       <pubDate>Sat, 19 Oct 2019 17:55:50 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/cms/</guid>
       <description></description>
     </item>
@@ -122,7 +117,6 @@ $ ./tmux a
       <title>PADME Experiment</title>
       <link>https://frankenthal.dev/project/padme/</link>
       <pubDate>Sat, 19 Oct 2019 17:32:40 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/padme/</guid>
       <description></description>
     </item>
@@ -131,7 +125,6 @@ $ ./tmux a
       <title>When light and light collide</title>
       <link>https://frankenthal.dev/post/light-by-light/</link>
       <pubDate>Sun, 07 Jul 2019 23:21:30 -0500</pubDate>
-      
       <guid>https://frankenthal.dev/post/light-by-light/</guid>
       <description>
 
@@ -167,8 +160,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f1.jpg&#34; data-caption=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34;&gt;
 
+&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -200,8 +195,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;event_selection.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;event_selection.png&#34; &gt;
 
+&lt;img src=&#34;event_selection.png&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -224,8 +221,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f3.jpg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f3.jpg&#34; &gt;
 
+&lt;img src=&#34;nphys4208-f3.jpg&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -250,7 +249,6 @@ $ ./tmux a
       <title>Characterization and Performance of PADME’s Cherenkov-Based Small-Angle Calorimeter</title>
       <link>https://frankenthal.dev/publication/frankenthal-2018-yvf/</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/frankenthal-2018-yvf/</guid>
       <description></description>
     </item>
@@ -259,7 +257,6 @@ $ ./tmux a
       <title>Searching for Dark Photons with PADME</title>
       <link>https://frankenthal.dev/publication/frankenthal-2019-searching/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/frankenthal-2019-searching/</guid>
       <description>&lt;p&gt;Proceedings in preparation&lt;/p&gt;
 </description>
@@ -269,7 +266,6 @@ $ ./tmux a
       <title>The PADME experiment</title>
       <link>https://frankenthal.dev/publication/albicocco-2018-jal/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/albicocco-2018-jal/</guid>
       <description></description>
     </item>
@@ -278,7 +274,6 @@ $ ./tmux a
       <title>The calorimeter system of the new muon g -2 experiment at Fermilab</title>
       <link>https://frankenthal.dev/publication/alonzi-2016-vos/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
       <description></description>
     </item>
@@ -287,7 +282,6 @@ $ ./tmux a
       <title>Studies of an array of PbF2 Cherenkov crystals with large-area SiPM readout</title>
       <link>https://frankenthal.dev/publication/fienberg-2015/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/fienberg-2015/</guid>
       <description></description>
     </item>
@@ -296,7 +290,6 @@ $ ./tmux a
       <title>Muon (g-2) Technical Design Report</title>
       <link>https://frankenthal.dev/publication/grange-2015-fou/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/grange-2015-fou/</guid>
       <description></description>
     </item>
@@ -305,7 +298,6 @@ $ ./tmux a
       <title>The Measurement of the Anomalous Magnetic Moment of the Muon at Fermilab</title>
       <link>https://frankenthal.dev/publication/logashenko-2015-xab/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/logashenko-2015-xab/</guid>
       <description></description>
     </item>

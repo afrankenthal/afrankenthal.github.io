@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>I. Logashenko on Andre Frankenthal</title>
+    <title>I. Logashenko | Andre Frankenthal</title>
     <link>https://frankenthal.dev/authors/i.-logashenko/</link>
-    <description>Recent content in I. Logashenko on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/authors/i.-logashenko/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/authors/i.-logashenko/index.xml" rel="self" type="application/rss+xml" />
+    <description>I. Logashenko</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>I. Logashenko</title>
+      <link>https://frankenthal.dev/authors/i.-logashenko/</link>
+    </image>
     
     <item>
       <title>The Measurement of the Anomalous Magnetic Moment of the Muon at Fermilab</title>
       <link>https://frankenthal.dev/publication/logashenko-2015-xab/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://frankenthal.dev/publication/logashenko-2015-xab/</guid>
       <description></description>
     </item>

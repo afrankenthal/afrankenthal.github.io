@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>paper review on Andre Frankenthal</title>
+    <title>paper review | Andre Frankenthal</title>
     <link>https://frankenthal.dev/categories/paper-review/</link>
-    <description>Recent content in paper review on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 07 Jul 2019 23:21:30 -0500</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/categories/paper-review/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/categories/paper-review/index.xml" rel="self" type="application/rss+xml" />
+    <description>paper review</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Jul 2019 23:21:30 -0500</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>paper review</title>
+      <link>https://frankenthal.dev/categories/paper-review/</link>
+    </image>
     
     <item>
       <title>When light and light collide</title>
       <link>https://frankenthal.dev/post/light-by-light/</link>
       <pubDate>Sun, 07 Jul 2019 23:21:30 -0500</pubDate>
-      
       <guid>https://frankenthal.dev/post/light-by-light/</guid>
       <description>
 
@@ -51,8 +51,10 @@
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f1.jpg&#34; data-caption=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34;&gt;
 
+&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -84,8 +86,10 @@
 
 &lt;figure&gt;
 
-&lt;img src=&#34;event_selection.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;event_selection.png&#34; &gt;
 
+&lt;img src=&#34;event_selection.png&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -108,8 +112,10 @@
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f3.jpg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f3.jpg&#34; &gt;
 
+&lt;img src=&#34;nphys4208-f3.jpg&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;

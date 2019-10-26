@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Andre Frankenthal</title>
+    <title>Projects | Andre Frankenthal</title>
     <link>https://frankenthal.dev/project/</link>
-    <description>Recent content in Projects on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2019 18:55:58 -0400</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/project/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 18:55:58 -0400</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>https://frankenthal.dev/project/</link>
+    </image>
     
     <item>
       <title>Arduino Series</title>
       <link>https://frankenthal.dev/project/arduino/</link>
       <pubDate>Sat, 19 Oct 2019 18:55:58 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/arduino/</guid>
       <description></description>
     </item>
@@ -24,7 +24,6 @@
       <title>ParticleBites</title>
       <link>https://frankenthal.dev/project/particlebites/</link>
       <pubDate>Sat, 19 Oct 2019 17:56:18 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/particlebites/</guid>
       <description></description>
     </item>
@@ -33,7 +32,6 @@
       <title>HEPMAP</title>
       <link>https://frankenthal.dev/project/hepmap/</link>
       <pubDate>Sat, 19 Oct 2019 17:56:09 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/hepmap/</guid>
       <description></description>
     </item>
@@ -42,7 +40,6 @@
       <title>CMS Experiment</title>
       <link>https://frankenthal.dev/project/cms/</link>
       <pubDate>Sat, 19 Oct 2019 17:55:50 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/cms/</guid>
       <description></description>
     </item>
@@ -51,7 +48,6 @@
       <title>PADME Experiment</title>
       <link>https://frankenthal.dev/project/padme/</link>
       <pubDate>Sat, 19 Oct 2019 17:32:40 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/project/padme/</guid>
       <description></description>
     </item>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>technical notes on Andre Frankenthal</title>
+    <title>technical notes | Andre Frankenthal</title>
     <link>https://frankenthal.dev/categories/technical-notes/</link>
-    <description>Recent content in technical notes on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
-    
-	    <atom:link href="https://frankenthal.dev/categories/technical-notes/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/categories/technical-notes/index.xml" rel="self" type="application/rss+xml" />
+    <description>technical notes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>technical notes</title>
+      <link>https://frankenthal.dev/categories/technical-notes/</link>
+    </image>
     
     <item>
       <title>Pyxrootd bindings on macOS</title>
       <link>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</link>
       <pubDate>Sat, 19 Oct 2019 23:21:01 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</guid>
       <description>&lt;p&gt;The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).&lt;/p&gt;
 
@@ -48,7 +48,6 @@ rm -rf xrootd-4.8.3
       <title>Tmux on lxplus</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus/</link>
       <pubDate>Sat, 19 Oct 2019 23:14:25 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
       <description>&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).&lt;/p&gt;
 

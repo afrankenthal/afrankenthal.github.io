@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Andre Frankenthal</title>
+    <title>Posts | Andre Frankenthal</title>
     <link>https://frankenthal.dev/post/</link>
-    <description>Recent content in Posts on Andre Frankenthal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    
-	    <atom:link href="https://frankenthal.dev/post/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://frankenthal.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://frankenthal.dev/img/icon-192.png</url>
+      <title>Posts</title>
+      <link>https://frankenthal.dev/post/</link>
+    </image>
     
     <item>
       <title>Pyxrootd bindings on macOS</title>
       <link>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</link>
       <pubDate>Sat, 19 Oct 2019 23:21:01 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</guid>
       <description>&lt;p&gt;The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).&lt;/p&gt;
 
@@ -47,7 +48,6 @@ rm -rf xrootd-4.8.3
       <title>Tmux on lxplus</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus/</link>
       <pubDate>Sat, 19 Oct 2019 23:14:25 -0400</pubDate>
-      
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
       <description>&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).&lt;/p&gt;
 
@@ -85,7 +85,6 @@ $ ./tmux a
       <title>When light and light collide</title>
       <link>https://frankenthal.dev/post/light-by-light/</link>
       <pubDate>Sun, 07 Jul 2019 23:21:30 -0500</pubDate>
-      
       <guid>https://frankenthal.dev/post/light-by-light/</guid>
       <description>
 
@@ -121,8 +120,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f1.jpg&#34; data-caption=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34;&gt;
 
+&lt;img src=&#34;nphys4208-f1.jpg&#34; alt=&#34;Left: Feynman diagrams of light-by-light scattering. Two incoming photons interact and two outgoing photons are produced. Right: how to measure light-by-light scattering using Ultra-Peripheral Collisions (UPC) with lead ions in the LHC. Source: https://doi.org/10.1038/nphys4208&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -154,8 +155,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;event_selection.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;event_selection.png&#34; &gt;
 
+&lt;img src=&#34;event_selection.png&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
@@ -178,8 +181,10 @@ $ ./tmux a
 
 &lt;figure&gt;
 
-&lt;img src=&#34;nphys4208-f3.jpg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;nphys4208-f3.jpg&#34; &gt;
 
+&lt;img src=&#34;nphys4208-f3.jpg&#34; alt=&#34;&#34; &gt;
+&lt;/a&gt;
 
 
 &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
