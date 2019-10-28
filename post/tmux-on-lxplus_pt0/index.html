@@ -28,10 +28,13 @@
   
     
   
-  <meta name="description" content="The high-energy physics reader&#39;s digest">
+  <meta name="description" content="(This is actually a prequel to &ldquo;Tmux on lxplus&rdquo;, despite being uploaded after it)
+The tmux version on CERN&rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.
+ Download everything (tmux requires libevent and ncurses)
+$ mkdir -p $HOME/tmux_tmp $ mkdir -p $HOME/local $ cd $HOME/tmux_tmp $ wget https://github.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/project/particlebites/">
+  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/post/tmux-on-lxplus_pt0/">
 
   
 
@@ -97,27 +100,31 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://frankenthal.dev/project/particlebites/">
+  <link rel="canonical" href="https://frankenthal.dev/post/tmux-on-lxplus_pt0/">
 
   
   
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Andre Frankenthal">
-  <meta property="og:url" content="https://frankenthal.dev/project/particlebites/">
-  <meta property="og:title" content="ParticleBites | Andre Frankenthal">
-  <meta property="og:description" content="The high-energy physics reader&#39;s digest"><meta property="og:image" content="https://frankenthal.dev/project/particlebites/featured.png">
-  <meta property="twitter:image" content="https://frankenthal.dev/project/particlebites/featured.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="https://frankenthal.dev/post/tmux-on-lxplus_pt0/">
+  <meta property="og:title" content="Tmux on lxplus - first part | Andre Frankenthal">
+  <meta property="og:description" content="(This is actually a prequel to &ldquo;Tmux on lxplus&rdquo;, despite being uploaded after it)
+The tmux version on CERN&rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.
+ Download everything (tmux requires libevent and ncurses)
+$ mkdir -p $HOME/tmux_tmp $ mkdir -p $HOME/local $ cd $HOME/tmux_tmp $ wget https://github."><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
+  <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2019-10-19T17:56:18-04:00">
+      <meta property="article:published_time" content="2019-10-28T00:34:43-04:00">
     
-    <meta property="article:modified_time" content="2019-10-26T16:57:16-04:00">
+    <meta property="article:modified_time" content="2019-10-28T00:34:43-04:00">
   
 
   
@@ -129,6 +136,8 @@
 
 
 
+
+  
 
 
 
@@ -149,19 +158,15 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://frankenthal.dev/project/particlebites/"
+    "@id": "https://frankenthal.dev/post/tmux-on-lxplus_pt0/"
   },
-  "headline": "ParticleBites",
+  "headline": "Tmux on lxplus - first part",
   
-  "image": [
-    "https://frankenthal.dev/project/particlebites/featured.png"
-  ],
-  
-  "datePublished": "2019-10-19T17:56:18-04:00",
-  "dateModified": "2019-10-26T16:57:16-04:00",
+  "datePublished": "2019-10-28T00:34:43-04:00",
+  "dateModified": "2019-10-28T00:34:43-04:00",
   
   "author": {
     "@type": "Person",
@@ -176,7 +181,7 @@
       "url": "https://frankenthal.dev/img/icon-512.png"
     }
   },
-  "description": "The high-energy physics reader's digest"
+  "description": "(This is actually a prequel to \u0026ldquo;Tmux on lxplus\u0026rdquo;, despite being uploaded after it)\nThe tmux version on CERN\u0026rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.\n Download everything (tmux requires libevent and ncurses)\n$ mkdir -p $HOME/tmux_tmp $ mkdir -p $HOME/local $ cd $HOME/tmux_tmp $ wget https://github."
 }
 </script>
 
@@ -194,7 +199,7 @@
 
 
 
-  <title>ParticleBites | Andre Frankenthal</title>
+  <title>Tmux on lxplus - first part | Andre Frankenthal</title>
 
 </head>
 
@@ -426,7 +431,7 @@
 </nav>
 
 
-  <article class="article article-project">
+  <article class="article">
 
   
 
@@ -441,24 +446,18 @@
 
 
 
-
-
-
-
-
-
-
+  
 
   
   
-
-
+  
 <div class="article-container pt-3">
-  <h1>ParticleBites</h1>
+  <h1>Tmux on lxplus - first part</h1>
 
   
 
   
+    
 
 
 
@@ -472,22 +471,29 @@
     
     
       
-          Last updated on
-      
     
-    Oct 26, 2019
+    Oct 28, 2019
   </span>
   
 
   
 
   
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
 
   
   
   
 
   
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/technical-notes/">technical notes</a></span>
   
 
   
@@ -503,7 +509,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://frankenthal.dev/project/particlebites/&amp;text=ParticleBites" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://frankenthal.dev/post/tmux-on-lxplus_pt0/&amp;text=Tmux%20on%20lxplus%20-%20first%20part" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -516,7 +522,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://frankenthal.dev/project/particlebites/&amp;t=ParticleBites" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://frankenthal.dev/post/tmux-on-lxplus_pt0/&amp;t=Tmux%20on%20lxplus%20-%20first%20part" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -529,7 +535,7 @@
       
       
       <li>
-        <a href="mailto:?subject=ParticleBites&amp;body=https://frankenthal.dev/project/particlebites/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Tmux%20on%20lxplus%20-%20first%20part&amp;body=https://frankenthal.dev/post/tmux-on-lxplus_pt0/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -542,7 +548,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://frankenthal.dev/project/particlebites/&amp;title=ParticleBites" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://frankenthal.dev/post/tmux-on-lxplus_pt0/&amp;title=Tmux%20on%20lxplus%20-%20first%20part" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -555,7 +561,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=ParticleBites%20https://frankenthal.dev/project/particlebites/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Tmux%20on%20lxplus%20-%20first%20part%20https://frankenthal.dev/post/tmux-on-lxplus_pt0/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -568,7 +574,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://frankenthal.dev/project/particlebites/&amp;title=ParticleBites" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://frankenthal.dev/post/tmux-on-lxplus_pt0/&amp;title=Tmux%20on%20lxplus%20-%20first%20part" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -581,64 +587,22 @@
 
 </div>
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="btn-links mb-3">
-  
-  <a class="btn btn-outline-primary my-1" href="https://particlebites.com" target="_blank" rel="noopener">Go to Project Site</a>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 330px; max-height: 200px;">
-  <div style="position: relative">
-    <img src="/project/particlebites/featured.png" alt="" class="featured-image">
     
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </div>
 
 
@@ -646,19 +610,91 @@
   <div class="article-container">
 
     <div class="article-style">
-      
+      <p>(This is actually a prequel to <a href="https://frankenthal.dev/post/tmux-on-lxplus/" target="_blank">&ldquo;Tmux on lxplus&rdquo;</a>, despite being uploaded after it)</p>
+
+<p>The tmux version on CERN&rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.</p>
+
+<ul>
+<li><p>Download everything (tmux requires libevent and ncurses)</p>
+
+<pre><code>$ mkdir -p $HOME/tmux_tmp
+$ mkdir -p $HOME/local
+$ cd $HOME/tmux_tmp
+$ wget https://github.com/tmux/tmux/archive/2.3.tar.gz
+$ wget https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz
+$ wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz
+</code></pre></li>
+
+<li><p>Install libevent</p>
+
+<pre><code>$ tar zxvf libevent-2.0.19-stable.tar.gz
+$ cd libevent-2.0.19-stable
+$ ./configure —-prefix=$HOME/local —-disable-shared
+$ make
+$ make install
+$ cd ..
+</code></pre></li>
+</ul>
+
+<p>After the make command you might get some errors related to building the man or documentation, but you can ignore it and move on to make install.</p>
+
+<ul>
+<li><p>Install ncurses</p>
+
+<pre><code>$ tar zxvf ncurses-5.9.tar.gz
+$ cd ncurses-5.9
+$ export CPPFLAGS=“-P&quot;
+$ ./configure —-prefix=$HOME/local —-enable-symlinks
+$ make
+$ make install
+$ cd ..
+</code></pre></li>
+</ul>
+
+<p>Here again you might get some errors while compiling, but they seem to be all related to the man command so you should be able to ignore them. The export CPPFLAGS line is to avoid another compilation error (see here: <a href="https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int" target="_blank">https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int</a>). —enable-symlinks is also required to avoid yet another error (see here: <a href="http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html" target="_blank">http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html</a>).</p>
+
+<ul>
+<li><p>Install tmux</p>
+
+<pre><code>$ tar xzvf 2.3.tar.gz
+$ cd tmux-2.3
+$ ./autogen.sh
+$ mkdir -p build; cd build
+$ ../configure CFLAGS=&quot;-I$HOME/local/include -I$HOME/local/include/ncurses&quot; LDFLAGS=&quot;-L$HOME/local/lib -L$HOME/local/include/ncurses -L$HOME/local/include&quot; CPPFLAGS=&quot;-I$HOME/local/include -I$HOME/local/include/ncurses&quot; --prefix=$HOME/tmux_tmp/tmux-2.3
+$ make
+$ cp tmux $HOME/local/bin
+</code></pre></li>
+
+<li><p>Clean up</p>
+
+<pre><code>$ rm -rf $HOME/tmux_tmp
+</code></pre></li>
+
+<li><p>Add local bin to $PATH</p>
+
+<pre><code>$ export PATH=$HOME/local/bin:$PATH
+</code></pre>
+
+<p>(ideally add this line to ~/.bash_profile so it gets executed every time)</p></li>
+</ul>
+
+<p>Done! Now just source the bash_profile again and run tmux!</p>
+
+<p>Source: adapted from tmux_local_install.sh script at <a href="https://gist.github.com/ryin/3106801" target="_blank">https://gist.github.com/ryin/3106801</a></p>
+
+<p>(See lxplus version from <a href="https://gist.github.com/pablodecm/151e90af9787e8340562" target="_blank">https://gist.github.com/pablodecm/151e90af9787e8340562</a>)</p>
+
     </div>
 
     
 
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/outreach/">outreach</a>
-  
-</div>
+
+    
+
 
 
     
+      
 
 
 
@@ -793,29 +829,25 @@
 
 
 
-
-    
-
-
-    
+      
+      
     
 
     
-    
-    
 
     
-    
-    
+<section id="comments">
+  
+    <div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
 
-    
-    
-    
+  
+</section>
+
+
 
   </div>
 </article>
-
-
 
       
 

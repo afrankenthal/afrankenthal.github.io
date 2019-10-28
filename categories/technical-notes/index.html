@@ -117,7 +117,7 @@
   <meta property="og:description" content="PhD Candidate in Physics"><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
   <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-10-19T23:21:01-04:00">
+    <meta property="og:updated_time" content="2019-10-28T00:34:43-04:00">
   
 
   
@@ -402,6 +402,18 @@
   
   
   <div>
+    <h2><a href="/post/tmux-on-lxplus_pt0/">Tmux on lxplus - first part</a></h2>
+    <div class="article-style">
+      
+      (This is actually a prequel to &ldquo;Tmux on lxplus&rdquo;, despite being uploaded after it)
+The tmux version on CERN&rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.
+ Download everything (tmux requires libevent and ncurses)
+$ mkdir -p $HOME/tmux_tmp $ mkdir -p $HOME/local $ cd $HOME/tmux_tmp $ wget https://github.
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/post/pyxrootd-bindings-in-macos/">Pyxrootd bindings on macOS</a></h2>
     <div class="article-style">
       
@@ -413,11 +425,12 @@ Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
   </div>
   
   <div>
-    <h2><a href="/post/tmux-on-lxplus/">Tmux on lxplus</a></h2>
+    <h2><a href="/post/tmux-on-lxplus/">Tmux on lxplus - second part</a></h2>
     <div class="article-style">
       
-      Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
-When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:
+      (this is a sequel to &ldquo;Tmux on lxplus - first part&rdquo;, please check it out first!)
+Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
+When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session.
       
     </div>
   </div>

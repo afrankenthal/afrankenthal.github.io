@@ -5,12 +5,93 @@
     <link>https://frankenthal.dev/</link>
       <atom:link href="https://frankenthal.dev/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 23:21:01 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Oct 2019 00:34:43 -0400</lastBuildDate>
     <image>
       <url>https://frankenthal.dev/img/icon-192.png</url>
       <title>Publications</title>
       <link>https://frankenthal.dev/</link>
     </image>
+    
+    <item>
+      <title>Tmux on lxplus - first part</title>
+      <link>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</link>
+      <pubDate>Mon, 28 Oct 2019 00:34:43 -0400</pubDate>
+      <guid>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</guid>
+      <description>&lt;p&gt;(This is actually a prequel to &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Tmux on lxplus&amp;rdquo;&lt;/a&gt;, despite being uploaded after it)&lt;/p&gt;
+
+&lt;p&gt;The tmux version on CERN&amp;rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Download everything (tmux requires libevent and ncurses)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir -p $HOME/tmux_tmp
+$ mkdir -p $HOME/local
+$ cd $HOME/tmux_tmp
+$ wget https://github.com/tmux/tmux/archive/2.3.tar.gz
+$ wget https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz
+$ wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Install libevent&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar zxvf libevent-2.0.19-stable.tar.gz
+$ cd libevent-2.0.19-stable
+$ ./configure —-prefix=$HOME/local —-disable-shared
+$ make
+$ make install
+$ cd ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the make command you might get some errors related to building the man or documentation, but you can ignore it and move on to make install.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Install ncurses&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar zxvf ncurses-5.9.tar.gz
+$ cd ncurses-5.9
+$ export CPPFLAGS=“-P&amp;quot;
+$ ./configure —-prefix=$HOME/local —-enable-symlinks
+$ make
+$ make install
+$ cd ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here again you might get some errors while compiling, but they seem to be all related to the man command so you should be able to ignore them. The export CPPFLAGS line is to avoid another compilation error (see here: &lt;a href=&#34;https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int&#34; target=&#34;_blank&#34;&gt;https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int&lt;/a&gt;). —enable-symlinks is also required to avoid yet another error (see here: &lt;a href=&#34;http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html&#34; target=&#34;_blank&#34;&gt;http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html&lt;/a&gt;).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Install tmux&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar xzvf 2.3.tar.gz
+$ cd tmux-2.3
+$ ./autogen.sh
+$ mkdir -p build; cd build
+$ ../configure CFLAGS=&amp;quot;-I$HOME/local/include -I$HOME/local/include/ncurses&amp;quot; LDFLAGS=&amp;quot;-L$HOME/local/lib -L$HOME/local/include/ncurses -L$HOME/local/include&amp;quot; CPPFLAGS=&amp;quot;-I$HOME/local/include -I$HOME/local/include/ncurses&amp;quot; --prefix=$HOME/tmux_tmp/tmux-2.3
+$ make
+$ cp tmux $HOME/local/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clean up&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rm -rf $HOME/tmux_tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add local bin to $PATH&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ export PATH=$HOME/local/bin:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(ideally add this line to ~/.bash_profile so it gets executed every time)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Done! Now just source the bash_profile again and run tmux!&lt;/p&gt;
+
+&lt;p&gt;Source: adapted from tmux_local_install.sh script at &lt;a href=&#34;https://gist.github.com/ryin/3106801&#34; target=&#34;_blank&#34;&gt;https://gist.github.com/ryin/3106801&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(See lxplus version from &lt;a href=&#34;https://gist.github.com/pablodecm/151e90af9787e8340562&#34; target=&#34;_blank&#34;&gt;https://gist.github.com/pablodecm/151e90af9787e8340562&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pyxrootd bindings on macOS</title>
@@ -45,11 +126,13 @@ rm -rf xrootd-4.8.3
     </item>
     
     <item>
-      <title>Tmux on lxplus</title>
+      <title>Tmux on lxplus - second part</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus/</link>
       <pubDate>Sat, 19 Oct 2019 23:14:25 -0400</pubDate>
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
-      <description>&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).&lt;/p&gt;
+      <description>&lt;p&gt;(this is a sequel to &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus_pt0/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Tmux on lxplus - first part&amp;rdquo;&lt;/a&gt;, please check it out first!)&lt;/p&gt;
+
+&lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus_pt0/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the &lt;em&gt;same&lt;/em&gt; ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:&lt;/p&gt;
 
