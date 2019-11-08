@@ -3,14 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://frankenthal.dev/categories/</loc>
-    <lastmod>2019-10-28T00:34:43-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://frankenthal.dev/post/afs-kerberos-on-macos/</loc>
+    <lastmod>2019-11-08T00:05:50-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/</loc>
+    <lastmod>2019-11-08T00:05:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/</loc>
+    <lastmod>2019-11-08T00:05:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/categories/</loc>
     <lastmod>2019-10-28T00:34:43-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

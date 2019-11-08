@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Andre Frankenthal">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.
+However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.370cd933af6ddfd22fe21198e89f4d22.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Andre Frankenthal">
+  <meta property="og:url" content="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
+  <meta property="og:title" content="SSH &#43; Kerberos &#43; Keytabs on MacOS | Andre Frankenthal">
+  <meta property="og:description" content="Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.
+However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day."><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
+  <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-11-08T00:05:49-05:00">
+    
+    <meta property="article:modified_time" content="2019-11-08T00:05:49-05:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/"
+  },
+  "headline": "SSH + Kerberos + Keytabs on MacOS",
+  
+  "datePublished": "2019-11-08T00:05:49-05:00",
+  "dateModified": "2019-11-08T00:05:49-05:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Andre Frankenthal"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Andre Frankenthal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://frankenthal.dev/img/icon-512.png"
+    }
+  },
+  "description": "Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.\nHowever, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>SSH &#43; Kerberos &#43; Keytabs on MacOS | Andre Frankenthal</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Andre Frankenthal</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>SSH &#43; Kerberos &#43; Keytabs on MacOS</h1>
+
+  
+
+  
+    
+
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Nov 8, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&amp;text=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&amp;t=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS&amp;body=https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&amp;title=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS%20https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&amp;title=SSH%20&#43;%20Kerberos%20&#43;%20Keytabs%20on%20MacOS" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.</p>
+
+<p>However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day. Kerberos keytab files make the authentication process even more convenient. With keytabs, you type your password once, it gets encrypted according to the chosen encryption method, and then the encrypted password in the keytab file can be used to obtain a Kerberos ticket, which will subsequently grant access to the remote machine. Never type your password again!</p>
+
+<p>But be careful to make the keytab file readable only by you, the owner, as anyone with a read access to a keytab file will automatically have access to the remote machine as well (though they still won’t know your password, since it’s encrypted).</p>
+
+<p>To get SSH with Kerberos + keytabs working, it’s a long and harrowing road… But let’s start with the first step.</p>
+
+<p><strong>Get SSH + Kerberos + Keytabs working:</strong></p>
+
+<ol>
+<li><p>Obtain correct SSH binary. If you have MacOS Sierra, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being <code>GSSAPITrustDNS</code>). What&rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your <code>/usr/local/bin</code> folder, and make sure that the <code>$PATH</code> variable points first to that folder, before pointing to <code>/usr/bin</code> (where the native SSH binary lives), so that it will be picked up first by the system.</p></li>
+
+<li><p>Adjust Kerberos configuration. This is a complicated process but you can just copy the right <code>krb5.conf</code> to your system, placing it in <code>/etc/krb5.conf</code>. Here is mine: <a href="/files/krb5.conf">krb5.conf</a>.</p></li>
+
+<li><p>Enable Kerberos authentication in SSH config. For each remote network you want to connect to (e.g. Fermilab, CLASSE, CERN), edit the file <code>~/.ssh/config</code> to be similar to this one: <a href="/files/config">config</a>. It’s important to have the <code>GSSAPI\*</code> options and the <code>PreferredAuthentications</code> option like in the file, to allow Kerberos authentication.</p></li>
+
+<li><p>Make a keytab file with your encrypted password. This step is to create a keytab file containing your password that will be fed to the kinit command in order to obtain a Kerberos ticket. On MacOS X (which comes with the Heimdal flavor of Kerberos, and not MIT’s) the command to add a password for CERN’s account is:</p>
+
+<pre><code>$ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
+</code></pre>
+
+<p>MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that <code>ktutil</code> doesn’t handle well (see <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534" target="_blank">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534</a> and <a href="https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available" target="_blank">https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available</a>). The equivalent command for a CLASSE entry would be:</p>
+
+<pre><code>$ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
+</code></pre>
+
+<p>You can also make your keytab file when logged in to one of the remote machines. For example, if you are on a lxplus machine, you can create a keytab file with a different version of the Kerberos tools (MIT’s one):</p>
+
+<pre><code>$ ktutil 
+addent -password -p user@CERN.CH -k 3 -e arcfour-hmac-md5
+(type your password)
+wkt keytab
+quit
+</code></pre>
+
+<p>(for more info see here <a href="https://kb.iu.edu/d/aumh" target="_blank">https://kb.iu.edu/d/aumh</a>). Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.</p></li>
+
+<li><p>Use the keytab file to authenticate to <code>kinit</code>. The command <code>$ kinit —afslog -kt ~/keytab user@CERN.CH</code> or <code>$ kinit -ky ~/keytab user@CLASSE.CORNELL.EDU</code> should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!</p></li>
+
+<li><p>SSH to remote machine as usual. For example, <code>ssh user@lxplus.cern.ch</code> or <code>ssh user@lnx201.classe.cornell.edu</code>. Again your password shouldn’t be asked anymore.</p></li>
+
+<li><p>Remember to set the permissions of the keytab file to read-only by you! Anyone with read access to this file could log in to your accounts, so make sure it can only be readable by you.</p></li>
+</ol>
+
+<p>More (partial) info: <a href="http://linux.web.cern.ch/linux/docs/kerberos-access.shtml" target="_blank">http://linux.web.cern.ch/linux/docs/kerberos-access.shtml</a></p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/e1ded11e4d1b8c1dde405aaf6e0a660b?s=200')" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://frankenthal.dev/">Andre Frankenthal</a></h5>
+      <h6 class="card-subtitle">PhD Candidate in Physics</h6>
+      <p class="card-text">I search for dark matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="https://www.linkedin.com/in/andre-frankenthal-91008169" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="https://github.com/afrankenthal" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="https://orcid.org/0000-0002-2583-5982" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="https://inspirehep.net/author/profile/A.Frankenthal.1" target="_blank" rel="noopener">
+              <i class="ai ai-inspire"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a href="/files/CV_AndreFrankenthal.pdf" >
+              <i class="ai ai-cv"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+<section id="comments">
+  
+    <div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
+
+  
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.f92d7215d2132cd354f657f0bc9cc542.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
