@@ -117,7 +117,7 @@
   <meta property="og:description" content="PhD Candidate in Physics"><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
   <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-10-28T00:34:43-04:00">
+    <meta property="og:updated_time" content="2019-11-08T00:05:50-05:00">
   
 
   
@@ -400,6 +400,25 @@
   
 
   
+  
+  <div>
+    <h2><a href="/post/afs-kerberos-on-macos/">AFS &#43; Kerberos on MacOS</a></h2>
+    <div class="article-style">
+      
+      CERN provides AFS access to its remote machines. When you log in via SSH you are directed to your own personal folder in the AFS filesystem. It turns out you can mount the remote AFS filesystem on your local machine and &ldquo;skip&rdquo; the SSH step, treating the folder as if it were local (SSHFS-style). Once you have SSH + Kerberos + keytab files configured, you can use the steps below to install and use AFS on MacOS.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/ssh_kerberos_keytabs_macos/">SSH &#43; Kerberos &#43; Keytabs on MacOS</a></h2>
+    <div class="article-style">
+      
+      Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.
+However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day.
+      
+    </div>
+  </div>
   
   <div>
     <h2><a href="/post/tmux-on-lxplus_pt0/">Tmux on lxplus - first part</a></h2>

@@ -31,7 +31,7 @@
   <meta name="description" content="PhD Candidate in Physics">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/categories/">
+  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/tags/technical-notes/">
 
   
 
@@ -92,14 +92,14 @@
   
 
   
-  <link rel="alternate" href="/categories/index.xml" type="application/rss+xml" title="Andre Frankenthal">
+  <link rel="alternate" href="/tags/technical-notes/index.xml" type="application/rss+xml" title="Andre Frankenthal">
   
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://frankenthal.dev/categories/">
+  <link rel="canonical" href="https://frankenthal.dev/tags/technical-notes/">
 
   
   
@@ -112,8 +112,8 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Andre Frankenthal">
-  <meta property="og:url" content="https://frankenthal.dev/categories/">
-  <meta property="og:title" content="Categories | Andre Frankenthal">
+  <meta property="og:url" content="https://frankenthal.dev/tags/technical-notes/">
+  <meta property="og:title" content="technical notes | Andre Frankenthal">
   <meta property="og:description" content="PhD Candidate in Physics"><meta property="og:image" content="https://frankenthal.dev/img/icon-192.png">
   <meta property="twitter:image" content="https://frankenthal.dev/img/icon-192.png"><meta property="og:locale" content="en-us">
   
@@ -134,7 +134,7 @@
 
 
 
-  <title>Categories | Andre Frankenthal</title>
+  <title>technical notes | Andre Frankenthal</title>
 
 </head>
 
@@ -387,7 +387,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1>Categories</h1>
+  <h1>technical notes</h1>
 
   
 
@@ -402,15 +402,54 @@
   
   
   <div>
-    <h2><a href="/categories/technical-notes/">technical notes</a></h2>
+    <h2><a href="/post/afs-kerberos-on-macos/">AFS &#43; Kerberos on MacOS</a></h2>
     <div class="article-style">
+      
+      CERN provides AFS access to its remote machines. When you log in via SSH you are directed to your own personal folder in the AFS filesystem. It turns out you can mount the remote AFS filesystem on your local machine and &ldquo;skip&rdquo; the SSH step, treating the folder as if it were local (SSHFS-style). Once you have SSH + Kerberos + keytab files configured, you can use the steps below to install and use AFS on MacOS.
       
     </div>
   </div>
   
   <div>
-    <h2><a href="/categories/paper-review/">paper review</a></h2>
+    <h2><a href="/post/ssh_kerberos_keytabs_macos/">SSH &#43; Kerberos &#43; Keytabs on MacOS</a></h2>
     <div class="article-style">
+      
+      Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.
+However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/tmux-on-lxplus_pt0/">Tmux on lxplus - first part</a></h2>
+    <div class="article-style">
+      
+      (This is actually a prequel to &ldquo;Tmux on lxplus&rdquo;, despite being uploaded after it)
+The tmux version on CERN&rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.
+ Download everything (tmux requires libevent and ncurses)
+$ mkdir -p $HOME/tmux_tmp $ mkdir -p $HOME/local $ cd $HOME/tmux_tmp $ wget https://github.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/pyxrootd-bindings-in-macos/">Pyxrootd bindings on macOS</a></h2>
+    <div class="article-style">
+      
+      The homebrew version of xrootd doesn’t come with python bindings for some reason. The python bindings are needed for reading remote ROOT files with python/uproot (not needed for C++ ROOT).
+Adapted from: https://github.com/lgray/coffeandbacon/blob/master/setup_lcg.sh
+# issue with python3 bindings, see https://sft.its.cern.ch/jira/browse/SPI-1198 wget https://github.com/xrootd/xrootd/archive/v4.8.3.tar.gz tar zxf v4.8.3.tar.gz &amp;&amp; rm -f v4.8.3.tar.gz cp xrd_setup.py xrootd-4.8.3/bindings/python/ pushd xrootd-4.8.3/bindings/python/ python xrd_setup.py install popd rm -rf xrootd-4.8.3  Check whatever version of xrootd you have and substitute the numbers above.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/tmux-on-lxplus/">Tmux on lxplus - second part</a></h2>
+    <div class="article-style">
+      
+      (this is a sequel to &ldquo;Tmux on lxplus - first part&rdquo;, please check it out first!)
+Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see here).
+When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the same ssh session.
       
     </div>
   </div>

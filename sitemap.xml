@@ -4,44 +4,57 @@
   
   <url>
     <loc>https://frankenthal.dev/post/afs-kerberos-on-macos/</loc>
-    <lastmod>2019-11-08T00:05:50-05:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/</loc>
-    <lastmod>2019-11-08T00:05:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/</loc>
-    <lastmod>2019-11-08T00:05:49-05:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/categories/</loc>
-    <lastmod>2019-10-28T00:34:43-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</loc>
-    <lastmod>2019-10-28T00:34:43-04:00</lastmod>
+    <loc>https://frankenthal.dev/tags/</loc>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/categories/technical-notes/</loc>
-    <lastmod>2019-10-28T00:34:43-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://frankenthal.dev/tags/technical-notes/</loc>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/</loc>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</loc>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frankenthal.dev/post/pyxrootd-bindings-in-macos/</loc>
-    <lastmod>2019-10-26T15:50:32-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/post/tmux-on-lxplus/</loc>
-    <lastmod>2019-10-26T15:50:50-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
   </url>
   
   <url>
@@ -51,12 +64,6 @@
   
   <url>
     <loc>https://frankenthal.dev/project/</loc>
-    <lastmod>2019-10-26T16:57:16-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://frankenthal.dev/tags/</loc>
     <lastmod>2019-10-26T16:57:16-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -95,12 +102,18 @@
   
   <url>
     <loc>https://frankenthal.dev/post/light-by-light/</loc>
-    <lastmod>2019-10-26T15:50:03-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://frankenthal.dev/categories/paper-review/</loc>
-    <lastmod>2019-10-26T15:50:03-04:00</lastmod>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankenthal.dev/tags/paper-review/</loc>
+    <lastmod>2019-11-08T01:14:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
