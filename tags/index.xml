@@ -5,20 +5,12 @@
     <link>https://frankenthal.dev/tags/</link>
       <atom:link href="https://frankenthal.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Nov 2019 00:05:50 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 18:55:58 -0400</lastBuildDate>
     <image>
       <url>https://frankenthal.dev/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://frankenthal.dev/tags/</link>
     </image>
-    
-    <item>
-      <title>technical notes</title>
-      <link>https://frankenthal.dev/tags/technical-notes/</link>
-      <pubDate>Fri, 08 Nov 2019 00:05:50 -0500</pubDate>
-      <guid>https://frankenthal.dev/tags/technical-notes/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>outreach</title>
@@ -39,8 +31,16 @@
     <item>
       <title>paper review</title>
       <link>https://frankenthal.dev/tags/paper-review/</link>
-      <pubDate>Sun, 07 Jul 2019 23:21:30 -0500</pubDate>
+      <pubDate>Tue, 27 Aug 2019 23:21:30 -0500</pubDate>
       <guid>https://frankenthal.dev/tags/paper-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technical notes</title>
+      <link>https://frankenthal.dev/tags/technical-notes/</link>
+      <pubDate>Mon, 17 Jun 2019 23:21:01 -0400</pubDate>
+      <guid>https://frankenthal.dev/tags/technical-notes/</guid>
       <description></description>
     </item>
     
