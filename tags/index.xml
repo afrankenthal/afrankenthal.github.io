@@ -5,12 +5,20 @@
     <link>https://frankenthal.dev/tags/</link>
       <atom:link href="https://frankenthal.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 18:55:58 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 24 Nov 2019 23:30:55 -0500</lastBuildDate>
     <image>
       <url>https://frankenthal.dev/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://frankenthal.dev/tags/</link>
     </image>
+    
+    <item>
+      <title>paper review</title>
+      <link>https://frankenthal.dev/tags/paper-review/</link>
+      <pubDate>Sun, 24 Nov 2019 23:30:55 -0500</pubDate>
+      <guid>https://frankenthal.dev/tags/paper-review/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>outreach</title>
@@ -25,14 +33,6 @@
       <link>https://frankenthal.dev/tags/experiment/</link>
       <pubDate>Sat, 19 Oct 2019 17:55:50 -0400</pubDate>
       <guid>https://frankenthal.dev/tags/experiment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>paper review</title>
-      <link>https://frankenthal.dev/tags/paper-review/</link>
-      <pubDate>Tue, 27 Aug 2019 23:21:30 -0500</pubDate>
-      <guid>https://frankenthal.dev/tags/paper-review/</guid>
       <description></description>
     </item>
     
