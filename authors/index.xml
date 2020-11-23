@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>A. Frankenthal</title>
-      <link>https://frankenthal.dev/authors/a.-frankenthal/</link>
+      <title> et al. </title>
+      <link>https://frankenthal.dev/authors/et-al./</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      <guid>https://frankenthal.dev/authors/a.-frankenthal/</guid>
+      <guid>https://frankenthal.dev/authors/et-al./</guid>
       <description></description>
     </item>
     
     <item>
-      <title>et al.</title>
-      <link>https://frankenthal.dev/authors/et-al./</link>
+      <title>A. Frankenthal</title>
+      <link>https://frankenthal.dev/authors/a.-frankenthal/</link>
       <pubDate>Fri, 01 Mar 2019 06:57:05 +0000</pubDate>
-      <guid>https://frankenthal.dev/authors/et-al./</guid>
+      <guid>https://frankenthal.dev/authors/a.-frankenthal/</guid>
       <description></description>
     </item>
     
@@ -137,7 +137,7 @@
       <link>https://frankenthal.dev/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://frankenthal.dev/authors/admin/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m a PhD Candidate in experimental high-energy Physics at Cornell University. Originally from Rio de Janeiro, Brazil, I hold a B.A. from Reed College, in Portland, Oregon, and a M.S. from Cornell. I work in two different experiments searching for dark matter using complementary strategies: with the larger &lt;a href=&#34;https://cms.cern/collaboration&#34; target=&#34;_blank&#34;&gt;CMS Collaboration&lt;/a&gt; smashing protons together at the LHC, and with a smaller team at Laboratori Nazionali di Frascati, Italy, looking for dark photons (&lt;a href=&#34;http://padme.lnf.infn.it/&#34; target=&#34;_blank&#34;&gt;PADME Collaboration&lt;/a&gt;). My work revolves around data analysis, detector data reconstruction, and upgrade studies for the next generation of high-energy physics detectors, in particular the CMS pixel detector.&lt;/p&gt;
+      <description>&lt;p&gt;I am currently a Dicke Fellow at Princeton University&amp;rsquo;s Physics department. Originally from Rio de Janeiro, Brazil, I hold a B.A. from Reed College, in Portland, OR, and a M.S. and Ph.D. from Cornell University, in Ithaca, NY. I work in two different experiments searching for dark matter using complementary strategies: with the larger &lt;a href=&#34;https://cms.cern/collaboration&#34; target=&#34;_blank&#34;&gt;CMS Collaboration&lt;/a&gt; smashing protons together at the LHC, and with a smaller team at Laboratori Nazionali di Frascati, Italy, looking for dark photons (&lt;a href=&#34;http://padme.lnf.infn.it/&#34; target=&#34;_blank&#34;&gt;PADME Collaboration&lt;/a&gt;). My work revolves around data analysis, detector data reconstruction, and upgrade studies for the next generation of high-energy physics detectors, in particular the CMS pixel detector.&lt;/p&gt;
 </description>
     </item>
     
