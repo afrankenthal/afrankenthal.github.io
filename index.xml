@@ -736,19 +736,18 @@ $ ./tmux a
       <link>https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/</link>
       <pubDate>Thu, 22 Jun 2017 00:05:49 -0500</pubDate>
       <guid>https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Last updated: January 2021&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.&lt;/p&gt;
+      <description>&lt;p&gt;Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.&lt;/p&gt;
 &lt;p&gt;However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day. Kerberos keytab files make the authentication process even more convenient. With keytabs, you type your password once, it gets encrypted according to the chosen encryption method, and then the encrypted password in the keytab file can be used to obtain a Kerberos ticket, which will subsequently grant access to the remote machine. Never type your password again!&lt;/p&gt;
 &lt;p&gt;But be careful to make the keytab file readable only by you, the owner, as anyone with a read access to a keytab file will automatically have access to the remote machine as well (though they still won’t know your password, since it’s encrypted).&lt;/p&gt;
 &lt;p&gt;To get SSH with Kerberos + keytabs working, it’s a long and harrowing road… But let’s start with the first step.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Get SSH + Kerberos + Keytabs working:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updated January 2021&lt;/strong&gt; 1. There is a better way to obtain an SSH binary with GSSAPITrustDNS support than outlined below. Using &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Homebrew&lt;/a&gt;, run:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew install rdp/homebrew-openssh-gssapi/openssh-patched --with-gssapi-support
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(from &lt;a href=&#34;https://github.com/rdp/homebrew-openssh-gssapi&#34;&gt;https://github.com/rdp/homebrew-openssh-gssapi&lt;/a&gt;)&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;See above&lt;/strong&gt; Obtain correct SSH binary. If you have MacOS Sierra, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being &lt;code&gt;GSSAPITrustDNS&lt;/code&gt;). What&amp;rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your &lt;code&gt;/usr/local/bin&lt;/code&gt; folder, and make sure that the &lt;code&gt;$PATH&lt;/code&gt; variable points first to that folder, before pointing to &lt;code&gt;/usr/bin&lt;/code&gt; (where the native SSH binary lives), so that it will be picked up first by the system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(Updated January 2021)&lt;/strong&gt;  Obtain correct SSH binary. If you have MacOS Sierra or later, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being &lt;code&gt;GSSAPITrustDNS&lt;/code&gt;). The best way to obtain an SSH binary with GSSAPITrustDNS support is using &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Homebrew&lt;/a&gt;. After installed, run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ brew install rdp/homebrew-openssh-gssapi/openssh-patched --with-gssapi-support
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(from &lt;a href=&#34;https://github.com/rdp/homebrew-openssh-gssapi&#34;&gt;https://github.com/rdp/homebrew-openssh-gssapi&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(Deprecated)&lt;/strong&gt; &lt;del&gt;What&amp;rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your &lt;code&gt;/usr/local/bin&lt;/code&gt; folder, and make sure that the &lt;code&gt;$PATH&lt;/code&gt; variable points first to that folder, before pointing to &lt;code&gt;/usr/bin&lt;/code&gt; (where the native SSH binary lives), so that it will be picked up first by the system.&lt;/del&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Adjust Kerberos configuration. This is a complicated process but you can just copy the right &lt;code&gt;krb5.conf&lt;/code&gt; to your system, placing it in &lt;code&gt;/etc/krb5.conf&lt;/code&gt;. Here is mine:&lt;/p&gt;
