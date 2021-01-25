@@ -809,44 +809,46 @@ Kerberos is a convenient way to authenticate and obtain access to remote machine
 <p>To get SSH with Kerberos + keytabs working, it’s a long and harrowing road… But let’s start with the first step.</p>
 <p><strong>Get SSH + Kerberos + Keytabs working:</strong></p>
 <p><strong>Updated January 2021</strong> 1. There is a better way to obtain an SSH binary with GSSAPITrustDNS support than outlined below. Using <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a>, run:</p>
-<pre><code class="language-brew">
-(from https://github.com/rdp/homebrew-openssh-gssapi)
-
-1. **See above** Obtain correct SSH binary. If you have MacOS Sierra, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being `GSSAPITrustDNS`). What's necessary here is to find an SSH binary from El Capitan and then copy it to your `/usr/local/bin` folder, and make sure that the `$PATH` variable points first to that folder, before pointing to `/usr/bin` (where the native SSH binary lives), so that it will be picked up first by the system.
-
-2. Adjust Kerberos configuration. This is a complicated process but you can just copy the right `krb5.conf` to your system, placing it in `/etc/krb5.conf`. Here is mine: 
-
-3. Enable Kerberos authentication in SSH config. For each remote network you want to connect to (e.g. Fermilab, CLASSE, CERN), edit the file `~/.ssh/config` to be similar to this one: It’s important to have the `GSSAPI\*` options and the `PreferredAuthentications` option like in the file, to allow Kerberos authentication.
-
-4. Make a keytab file with your encrypted password. This step is to create a keytab file containing your password that will be fed to the kinit command in order to obtain a Kerberos ticket. On MacOS X (which comes with the Heimdal flavor of Kerberos, and not MIT’s) the command to add a password for CERN’s account is:
-    
-    ```
-    $ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
-    ```
-    
-    MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that `ktutil` doesn’t handle well (see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534 and https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available). The equivalent command for a CLASSE entry would be: 
-
-    ```
-    $ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
-    ```
-
-    You can also make your keytab file when logged in to one of the remote machines. For example, if you are on a lxplus machine, you can create a keytab file with a different version of the Kerberos tools (MIT’s one): 
-
-    ```
-    $ ktutil 
-    addent -password -p user@CERN.CH -k 3 -e arcfour-hmac-md5
-    (type your password)
-    wkt keytab
-    quit
-    ```
-
-    (for more info see here https://kb.iu.edu/d/aumh). Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.
-5. Use the keytab file to authenticate to `kinit`. The command `$ kinit —afslog -kt ~/keytab user@CERN.CH` or `$ kinit -ky ~/keytab user@CLASSE.CORNELL.EDU` should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!
-6. SSH to remote machine as usual. For example, `ssh user@lxplus.cern.ch` or `ssh user@lnx201.classe.cornell.edu`. Again your password shouldn’t be asked anymore.
-7. Remember to set the permissions of the keytab file to read-only by you! Anyone with read access to this file could log in to your accounts, so make sure it can only be readable by you.
-
-More (partial) info: http://linux.web.cern.ch/linux/docs/kerberos-access.shtml
+<pre><code>brew install rdp/homebrew-openssh-gssapi/openssh-patched --with-gssapi-support
 </code></pre>
+<p>(from <a href="https://github.com/rdp/homebrew-openssh-gssapi">https://github.com/rdp/homebrew-openssh-gssapi</a>)</p>
+<ol>
+<li>
+<p><strong>See above</strong> Obtain correct SSH binary. If you have MacOS Sierra, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being <code>GSSAPITrustDNS</code>). What&rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your <code>/usr/local/bin</code> folder, and make sure that the <code>$PATH</code> variable points first to that folder, before pointing to <code>/usr/bin</code> (where the native SSH binary lives), so that it will be picked up first by the system.</p>
+</li>
+<li>
+<p>Adjust Kerberos configuration. This is a complicated process but you can just copy the right <code>krb5.conf</code> to your system, placing it in <code>/etc/krb5.conf</code>. Here is mine:</p>
+</li>
+<li>
+<p>Enable Kerberos authentication in SSH config. For each remote network you want to connect to (e.g. Fermilab, CLASSE, CERN), edit the file <code>~/.ssh/config</code> to be similar to this one: It’s important to have the <code>GSSAPI\*</code> options and the <code>PreferredAuthentications</code> option like in the file, to allow Kerberos authentication.</p>
+</li>
+<li>
+<p>Make a keytab file with your encrypted password. This step is to create a keytab file containing your password that will be fed to the kinit command in order to obtain a Kerberos ticket. On MacOS X (which comes with the Heimdal flavor of Kerberos, and not MIT’s) the command to add a password for CERN’s account is:</p>
+<pre><code>$ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
+</code></pre>
+<p>MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that <code>ktutil</code> doesn’t handle well (see <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534</a> and <a href="https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available)">https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available)</a>. The equivalent command for a CLASSE entry would be:</p>
+<pre><code>$ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
+</code></pre>
+<p>You can also make your keytab file when logged in to one of the remote machines. For example, if you are on a lxplus machine, you can create a keytab file with a different version of the Kerberos tools (MIT’s one):</p>
+<pre><code>$ ktutil 
+addent -password -p user@CERN.CH -k 3 -e arcfour-hmac-md5
+(type your password)
+wkt keytab
+quit
+</code></pre>
+<p>(for more info see here <a href="https://kb.iu.edu/d/aumh)">https://kb.iu.edu/d/aumh)</a>. Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.</p>
+</li>
+<li>
+<p>Use the keytab file to authenticate to <code>kinit</code>. The command <code>$ kinit —afslog -kt ~/keytab user@CERN.CH</code> or <code>$ kinit -ky ~/keytab user@CLASSE.CORNELL.EDU</code> should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!</p>
+</li>
+<li>
+<p>SSH to remote machine as usual. For example, <code>ssh user@lxplus.cern.ch</code> or <code>ssh user@lnx201.classe.cornell.edu</code>. Again your password shouldn’t be asked anymore.</p>
+</li>
+<li>
+<p>Remember to set the permissions of the keytab file to read-only by you! Anyone with read access to this file could log in to your accounts, so make sure it can only be readable by you.</p>
+</li>
+</ol>
+<p>More (partial) info: <a href="http://linux.web.cern.ch/linux/docs/kerberos-access.shtml">http://linux.web.cern.ch/linux/docs/kerberos-access.shtml</a></p>
 
     </div>
 
