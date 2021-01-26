@@ -810,7 +810,7 @@
 <pre><code class="language-bash">$ ssh -T git@github.com
 </code></pre>
 <p>The first time this command runs the passphrase should be asked for. But subsequent calls will not, since the passphrase will be retrieved from the Keychain automatically.</p>
-<p>Source: <a href="https://apple.stackexchange.com/a/264974">https://apple.stackexchange.com/a/264974</a></p>
+<p>Sources: <a href="https://apple.stackexchange.com/a/264974,">https://apple.stackexchange.com/a/264974,</a> <a href="https://developer.apple.com/library/archive/technotes/tn2449/_index.html">https://developer.apple.com/library/archive/technotes/tn2449/_index.html</a></p>
 <h2 id="kerberos-with-keychain-access">Kerberos with Keychain Access</h2>
 <p>It turns out that Kerberos on macOS (since maybe 10.9) has a &ldquo;hidden&rdquo; option where you can invoke the Keychain too. If you type:</p>
 <pre><code class="language-bash">$ kinit --keychain principal@REALM
