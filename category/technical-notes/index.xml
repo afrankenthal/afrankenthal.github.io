@@ -5,12 +5,40 @@
     <link>https://frankenthal.dev/category/technical-notes/</link>
       <atom:link href="https://frankenthal.dev/category/technical-notes/index.xml" rel="self" type="application/rss+xml" />
     <description>technical notes</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Jun 2019 23:21:01 -0400</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 25 Jan 2021 21:04:07 -0500</lastBuildDate>
     <image>
       <url>https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>technical notes</title>
       <link>https://frankenthal.dev/category/technical-notes/</link>
     </image>
+    
+    <item>
+      <title>Kerberos and SSH Keys with macOS Keychain</title>
+      <link>https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/</link>
+      <pubDate>Mon, 25 Jan 2021 21:04:07 -0500</pubDate>
+      <guid>https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&#34;&gt;Previously&lt;/a&gt; I have discussed how to get SSH, Kerberos, and keytabs working together on macOS. But there is an easier way on macOS to work with both SSH keys and Kerberos keytabs in a password-less (but still safe) world.&lt;/p&gt;
+&lt;h2 id=&#34;ssh-key-passphrases&#34;&gt;SSH key passphrases&lt;/h2&gt;
+&lt;p&gt;Since macOS Sierra 10.12.2, Apple offers some SSH configuration options that can automatically add SSH key passphrases to its &amp;ldquo;Keychain Access&amp;rdquo;, which manages all passwords, keys, and certificates. Once you enter the passphrase to an existing SSH key, it will be stored in the Keychain and automatically retrieved when the key needs to be used again. To enable this behavior, in your &lt;code&gt;~/.ssh/config&lt;/code&gt; file, add:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Host *
+   AddKeysToAgent yes
+   UseKeychain yes
+   IdentityFile ~/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;~/.ssh/id_rsa&lt;/code&gt; location is the standard one for RSA keys, but your mileage may vary. The &lt;code&gt;UseKeychain&lt;/code&gt; option makes sure the passphrases are added to the Keychain, and &lt;code&gt;AddKeysToAgent&lt;/code&gt; adds the relevant (e.g. RSA) key to the SSH key agent. You can test that this works easily if you have configured a GitHub or GitLab account to use SSH keys. Then just type (for example):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first time this command runs the passphrase should be asked for. But subsequent calls will not, since the passphrase will be retrieved from the Keychain automatically.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&#34;https://apple.stackexchange.com/a/264974&#34;&gt;https://apple.stackexchange.com/a/264974&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;kerberos-with-keychain-access&#34;&gt;Kerberos with Keychain Access&lt;/h2&gt;
+&lt;p&gt;It turns out that Kerberos on macOS (since maybe 10.9) has a &amp;ldquo;hidden&amp;rdquo; option where you can invoke the Keychain too. If you type:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ kinit --keychain principal@REALM
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(where principal is your Keberos username and REALM the realm where you want to connect) then macOS will ask for your Keberos password the first time and store it in the Keychain. Subsequent kinit invocations will automatically retrieve the password from the Keychain (even if you don&amp;rsquo;t use the &lt;code&gt;--keychain&lt;/code&gt; option), so you don&amp;rsquo;t have to type it ever again! In my opinion this is a much easier solution than the cumbersome way to retrieve proper Kerberos + keytab authentication described in my &lt;a href=&#34;https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/&#34;&gt;previous post&lt;/a&gt;, though of course keytabs work across OS&amp;rsquo;s while this is a macOS solution only.&lt;/p&gt;
+&lt;p&gt;Additionally, you can use this &lt;a href=&#34;https://hamstergene.github.io/macapps/ticket-renewer/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kerberos Ticket Autorenewal&lt;/a&gt; app to automatically renew your existing tickets, up to the maximum ticket renewability time window defined by the realm (typically a week or so).&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&#34;https://superuser.com/a/950769&#34;&gt;https://superuser.com/a/950769&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pyxrootd bindings on macOS</title>
@@ -28,8 +56,7 @@ python xrd_setup.py install
 popd
 rm -rf xrootd-4.8.3 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Check whatever version of xrootd you have and substitute the numbers above. You can find the xrd_setup.py file here&lt;/p&gt;
-&lt;p&gt;(Or from: &lt;a href=&#34;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&#34;&gt;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Check whatever version of xrootd you have and substitute the numbers above. You can find the xrd_setup.py file &lt;a href=&#34;https://frankenthal.dev/files/xrd_setup.py&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, or from: &lt;a href=&#34;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&#34;&gt;https://github.com/lgray/coffeandbacon/blob/master/xrd_setup.py&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My pyxrootd ended up installed here:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;/usr/local/lib/python3.7/site-packages/pyxrootd-4.8.3-py3.7-macosx-10.12-x86_64.egg/
 &lt;/code&gt;&lt;/pre&gt;
@@ -38,11 +65,11 @@ rm -rf xrootd-4.8.3
     </item>
     
     <item>
-      <title>Tmux on lxplus - second part</title>
+      <title>Tmux on lxplus - part II</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus/</link>
       <pubDate>Thu, 29 Nov 2018 23:14:25 -0400</pubDate>
       <guid>https://frankenthal.dev/post/tmux-on-lxplus/</guid>
-      <description>&lt;p&gt;(this is a sequel to &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus_pt0/&#34;&gt;&amp;ldquo;Tmux on lxplus - first part&amp;rdquo;&lt;/a&gt;, please check it out first!)&lt;/p&gt;
+      <description>&lt;p&gt;(this is a continuation of &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus_pt0/&#34;&gt;&amp;ldquo;Tmux on lxplus - part I&amp;rdquo;&lt;/a&gt;, please check it out first!)&lt;/p&gt;
 &lt;p&gt;Lxplus comes with native tmux installed. However, the native version is 1.8 which is very old. CERN has no plans to update its tmux version, but it is possible to install your own tmux locally (see &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus_pt0/&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;When using my local tmux, I was running into a strange issue. I was able to create a new session and detach and reattach to it successfully while in the &lt;em&gt;same&lt;/em&gt; ssh session. But after logging out of lxplus and then back in, when trying to reattach to the tmux session, I got this error:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -66,11 +93,11 @@ $ ./tmux a
     </item>
     
     <item>
-      <title>Tmux on lxplus - first part</title>
+      <title>Tmux on lxplus - part I</title>
       <link>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</link>
       <pubDate>Thu, 06 Jul 2017 00:34:43 -0400</pubDate>
       <guid>https://frankenthal.dev/post/tmux-on-lxplus_pt0/</guid>
-      <description>&lt;p&gt;(This is actually a prequel to &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus/&#34;&gt;&amp;ldquo;Tmux on lxplus&amp;rdquo;&lt;/a&gt;, despite being uploaded after it)&lt;/p&gt;
+      <description>&lt;p&gt;(This is actually a prequel to &lt;a href=&#34;https://frankenthal.dev/post/tmux-on-lxplus/&#34;&gt;&amp;ldquo;Tmux on lxplus - part II&amp;rdquo;&lt;/a&gt;, despite being uploaded after it)&lt;/p&gt;
 &lt;p&gt;The tmux version on CERN&amp;rsquo;s lxplus is very old, 1.8. Since version 2.0 tmux has a host of neat new features, which makes it worth the pain of installing it locally. Here are the steps I took to get tmux 2.3 running on my lxplus setup.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -108,7 +135,7 @@ $ ./tmux a
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Here again you might get some errors while compiling, but they seem to be all related to the man command so you should be able to ignore them. The export CPPFLAGS line is to avoid another compilation error (see here: &lt;a href=&#34;https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int)&#34;&gt;https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int)&lt;/a&gt;. —enable-symlinks is also required to avoid yet another error (see here: &lt;a href=&#34;http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html)&#34;&gt;http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here again you might get some errors while compiling, but they seem to be all related to the man command so you should be able to ignore them. The export CPPFLAGS line is to avoid another compilation error (see &lt;a href=&#34;https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;). —enable-symlinks is also required to avoid yet another error (see &lt;a href=&#34;http://lists.bestpractical.com/pipermail/shipwright/2010-June/000029.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Install tmux&lt;/p&gt;
@@ -176,32 +203,32 @@ $ ./tmux a
 &lt;p&gt;&lt;strong&gt;(Deprecated)&lt;/strong&gt; &lt;del&gt;What&amp;rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your &lt;code&gt;/usr/local/bin&lt;/code&gt; folder, and make sure that the &lt;code&gt;$PATH&lt;/code&gt; variable points first to that folder, before pointing to &lt;code&gt;/usr/bin&lt;/code&gt; (where the native SSH binary lives), so that it will be picked up first by the system.&lt;/del&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Adjust Kerberos configuration. This is a complicated process but you can just copy the right &lt;code&gt;krb5.conf&lt;/code&gt; to your system, placing it in &lt;code&gt;/etc/krb5.conf&lt;/code&gt;. Here is mine:&lt;/p&gt;
+&lt;p&gt;Adjust Kerberos configuration. This is a complicated process but you can just copy the right &lt;code&gt;krb5.conf&lt;/code&gt; to your system, placing it in &lt;code&gt;/etc/krb5.conf&lt;/code&gt;. Here is &lt;a href=&#34;https://frankenthal.dev/files/krb5.conf&#34; target=&#34;_blank&#34;&gt;mine&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Enable Kerberos authentication in SSH config. For each remote network you want to connect to (e.g. Fermilab, CLASSE, CERN), edit the file &lt;code&gt;~/.ssh/config&lt;/code&gt; to be similar to this one: It’s important to have the &lt;code&gt;GSSAPI\*&lt;/code&gt; options and the &lt;code&gt;PreferredAuthentications&lt;/code&gt; option like in the file, to allow Kerberos authentication.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Make a keytab file with your encrypted password. This step is to create a keytab file containing your password that will be fed to the kinit command in order to obtain a Kerberos ticket. On MacOS X (which comes with the Heimdal flavor of Kerberos, and not MIT’s) the command to add a password for CERN’s account is:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that &lt;code&gt;ktutil&lt;/code&gt; doesn’t handle well (see &lt;a href=&#34;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534&#34;&gt;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534&lt;/a&gt; and &lt;a href=&#34;https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available)&#34;&gt;https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available)&lt;/a&gt;. The equivalent command for a CLASSE entry would be:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
+&lt;p&gt;MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that &lt;code&gt;ktutil&lt;/code&gt; doesn’t handle well (see &lt;a href=&#34;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;). The equivalent command for a CLASSE entry would be:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also make your keytab file when logged in to one of the remote machines. For example, if you are on a lxplus machine, you can create a keytab file with a different version of the Kerberos tools (MIT’s one):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ ktutil 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ktutil 
 addent -password -p user@CERN.CH -k 3 -e arcfour-hmac-md5
 (type your password)
 wkt keytab
 quit
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(for more info see here &lt;a href=&#34;https://kb.iu.edu/d/aumh)&#34;&gt;https://kb.iu.edu/d/aumh)&lt;/a&gt;. Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.&lt;/p&gt;
+&lt;p&gt;(for more info see &lt;a href=&#34;https://kb.iu.edu/d/aumh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;). Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Use the keytab file to authenticate to &lt;code&gt;kinit&lt;/code&gt;. The command &lt;code&gt;$ kinit —afslog -kt ~/keytab user@CERN.CH&lt;/code&gt; or &lt;code&gt;$ kinit -ky ~/keytab user@CLASSE.CORNELL.EDU&lt;/code&gt; should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!&lt;/p&gt;
+&lt;p&gt;Use the keytab file to authenticate to &lt;code&gt;kinit&lt;/code&gt;. The command &lt;code&gt;$ kinit —afslog -kt ~/keytab user@CERN.CH&lt;/code&gt; or &lt;code&gt;$ kinit -kt ~/keytab user@CLASSE.CORNELL.EDU&lt;/code&gt; should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;SSH to remote machine as usual. For example, &lt;code&gt;ssh user@lxplus.cern.ch&lt;/code&gt; or &lt;code&gt;ssh user@lnx201.classe.cornell.edu&lt;/code&gt;. Again your password shouldn’t be asked anymore.&lt;/p&gt;
+&lt;p&gt;SSH to remote machine as usual. For example, &lt;code&gt;ssh user@lxplus.cern.ch&lt;/code&gt; or &lt;code&gt;ssh user@lnx201.classe.cornell.edu&lt;/code&gt;. Again your password shouldn’t be asked for anymore.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Remember to set the permissions of the keytab file to read-only by you! Anyone with read access to this file could log in to your accounts, so make sure it can only be readable by you.&lt;/p&gt;

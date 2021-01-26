@@ -34,10 +34,10 @@
   
     
   
-  <meta name="description" content="Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.">
+  <meta name="description" content="Previously I have discussed how to get SSH, Kerberos, and keytabs working together on macOS. But there is an easier way on macOS to work with both SSH keys and Kerberos keytabs in a password-less (but still safe) world.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
+  <link rel="alternate" hreflang="en-us" href="https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/">
 
   
 
@@ -267,7 +267,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
+  <link rel="canonical" href="https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/">
 
   
   
@@ -283,15 +283,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Andre Frankenthal">
-  <meta property="og:url" content="https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/">
-  <meta property="og:title" content="SSH &#43; Kerberos &#43; Keytabs on MacOS | Andre Frankenthal">
-  <meta property="og:description" content="Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections."><meta property="og:image" content="https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/">
+  <meta property="og:title" content="Kerberos and SSH Keys with macOS Keychain | Andre Frankenthal">
+  <meta property="og:description" content="Previously I have discussed how to get SSH, Kerberos, and keytabs working together on macOS. But there is an easier way on macOS to work with both SSH keys and Kerberos keytabs in a password-less (but still safe) world."><meta property="og:image" content="https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2017-06-22T00:05:49-05:00">
+      <meta property="article:published_time" content="2021-01-25T21:04:07-05:00">
     
-    <meta property="article:modified_time" content="2021-01-25T00:05:49-05:00">
+    <meta property="article:modified_time" content="2021-01-25T21:04:07-05:00">
   
 
   
@@ -315,12 +315,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://frankenthal.dev/post/ssh_kerberos_keytabs_macos/"
+    "@id": "https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/"
   },
-  "headline": "SSH + Kerberos + Keytabs on MacOS",
+  "headline": "Kerberos and SSH Keys with macOS Keychain",
   
-  "datePublished": "2017-06-22T00:05:49-05:00",
-  "dateModified": "2021-01-25T00:05:49-05:00",
+  "datePublished": "2021-01-25T21:04:07-05:00",
+  "dateModified": "2021-01-25T21:04:07-05:00",
   
   "publisher": {
     "@type": "Organization",
@@ -330,7 +330,7 @@
       "url": "https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections."
+  "description": "Previously I have discussed how to get SSH, Kerberos, and keytabs working together on macOS. But there is an easier way on macOS to work with both SSH keys and Kerberos keytabs in a password-less (but still safe) world."
 }
 </script>
 
@@ -348,7 +348,7 @@
 
 
 
-  <title>SSH &#43; Kerberos &#43; Keytabs on MacOS | Andre Frankenthal</title>
+  <title>Kerberos and SSH Keys with macOS Keychain | Andre Frankenthal</title>
 
 </head>
 
@@ -737,7 +737,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>SSH &#43; Kerberos &#43; Keytabs on MacOS</h1>
+  <h1>Kerberos and SSH Keys with macOS Keychain</h1>
 
   
 
@@ -755,8 +755,6 @@
     
     
       
-          Last updated on
-      
     
     Jan 25, 2021
   </span>
@@ -767,7 +765,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    2 min read
   </span>
   
 
@@ -800,52 +798,26 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Kerberos is a convenient way to authenticate and obtain access to remote machines via SSH. Instead of typing your password every time you want to access a remote computer, you can type your password only once and obtain a Kerberos ticket, which serves as a ‘passport’ and saves typing effort during subsequent connections.</p>
-<p>However, Kerberos tickets usually expire in 24 hours, so you still need to type (and therefore remember) your password at least once a day. Kerberos keytab files make the authentication process even more convenient. With keytabs, you type your password once, it gets encrypted according to the chosen encryption method, and then the encrypted password in the keytab file can be used to obtain a Kerberos ticket, which will subsequently grant access to the remote machine. Never type your password again!</p>
-<p>But be careful to make the keytab file readable only by you, the owner, as anyone with a read access to a keytab file will automatically have access to the remote machine as well (though they still won’t know your password, since it’s encrypted).</p>
-<p>To get SSH with Kerberos + keytabs working, it’s a long and harrowing road… But let’s start with the first step.</p>
-<p><strong>Get SSH + Kerberos + Keytabs working:</strong></p>
-<ol>
-<li>
-<p><strong>(Updated January 2021)</strong>  Obtain correct SSH binary. If you have MacOS Sierra or later, it comes with an updated version of OpenSSH that drops some options that support Kerberos authentication (the most important being <code>GSSAPITrustDNS</code>). The best way to obtain an SSH binary with GSSAPITrustDNS support is using <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a>. After installed, run:</p>
-<pre><code class="language-bash">$ brew install rdp/homebrew-openssh-gssapi/openssh-patched --with-gssapi-support
+      <p><a href="/post/ssh_kerberos_keytabs_macos/">Previously</a> I have discussed how to get SSH, Kerberos, and keytabs working together on macOS. But there is an easier way on macOS to work with both SSH keys and Kerberos keytabs in a password-less (but still safe) world.</p>
+<h2 id="ssh-key-passphrases">SSH key passphrases</h2>
+<p>Since macOS Sierra 10.12.2, Apple offers some SSH configuration options that can automatically add SSH key passphrases to its &ldquo;Keychain Access&rdquo;, which manages all passwords, keys, and certificates. Once you enter the passphrase to an existing SSH key, it will be stored in the Keychain and automatically retrieved when the key needs to be used again. To enable this behavior, in your <code>~/.ssh/config</code> file, add:</p>
+<pre><code class="language-bash">Host *
+   AddKeysToAgent yes
+   UseKeychain yes
+   IdentityFile ~/.ssh/id_rsa
 </code></pre>
-<p>(from <a href="https://github.com/rdp/homebrew-openssh-gssapi">https://github.com/rdp/homebrew-openssh-gssapi</a>)</p>
-<p><strong>(Deprecated)</strong> <del>What&rsquo;s necessary here is to find an SSH binary from El Capitan and then copy it to your <code>/usr/local/bin</code> folder, and make sure that the <code>$PATH</code> variable points first to that folder, before pointing to <code>/usr/bin</code> (where the native SSH binary lives), so that it will be picked up first by the system.</del></p>
-</li>
-<li>
-<p>Adjust Kerberos configuration. This is a complicated process but you can just copy the right <code>krb5.conf</code> to your system, placing it in <code>/etc/krb5.conf</code>. Here is <a href="/files/krb5.conf" target="_blank">mine</a>.</p>
-</li>
-<li>
-<p>Enable Kerberos authentication in SSH config. For each remote network you want to connect to (e.g. Fermilab, CLASSE, CERN), edit the file <code>~/.ssh/config</code> to be similar to this one: It’s important to have the <code>GSSAPI\*</code> options and the <code>PreferredAuthentications</code> option like in the file, to allow Kerberos authentication.</p>
-</li>
-<li>
-<p>Make a keytab file with your encrypted password. This step is to create a keytab file containing your password that will be fed to the kinit command in order to obtain a Kerberos ticket. On MacOS X (which comes with the Heimdal flavor of Kerberos, and not MIT’s) the command to add a password for CERN’s account is:</p>
-<pre><code class="language-bash">$ ktutil -k ~/keytab add -p user@CERN.CH -e arcfour-hmac-md5 -V 3
+<p>The <code>~/.ssh/id_rsa</code> location is the standard one for RSA keys, but your mileage may vary. The <code>UseKeychain</code> option makes sure the passphrases are added to the Keychain, and <code>AddKeysToAgent</code> adds the relevant (e.g. RSA) key to the SSH key agent. You can test that this works easily if you have configured a GitHub or GitLab account to use SSH keys. Then just type (for example):</p>
+<pre><code class="language-bash">$ ssh -T git@github.com
 </code></pre>
-<p>MacOS will complain about the chosen encryption but it’s the only one that kinit supports for automation of CERN’s network connection (as far as I know). Other encryptions also contain a “salt” that <code>ktutil</code> doesn’t handle well (see <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698534" target="_blank" rel="noopener">here</a> and <a href="https://serverfault.com/questions/620521/kerberos-ktutil-what-kinds-of-encryption-are-available" target="_blank" rel="noopener">here</a>). The equivalent command for a CLASSE entry would be:</p>
-<pre><code class="language-bash">$ ktutil -kt ~/keytab add -p user@CLASSE.CORNELL.EDU -e aes256-cts-hmac-sha1-96 -V 1
+<p>The first time this command runs the passphrase should be asked for. But subsequent calls will not, since the passphrase will be retrieved from the Keychain automatically.</p>
+<p>Source: <a href="https://apple.stackexchange.com/a/264974">https://apple.stackexchange.com/a/264974</a></p>
+<h2 id="kerberos-with-keychain-access">Kerberos with Keychain Access</h2>
+<p>It turns out that Kerberos on macOS (since maybe 10.9) has a &ldquo;hidden&rdquo; option where you can invoke the Keychain too. If you type:</p>
+<pre><code class="language-bash">$ kinit --keychain principal@REALM
 </code></pre>
-<p>You can also make your keytab file when logged in to one of the remote machines. For example, if you are on a lxplus machine, you can create a keytab file with a different version of the Kerberos tools (MIT’s one):</p>
-<pre><code class="language-bash">$ ktutil 
-addent -password -p user@CERN.CH -k 3 -e arcfour-hmac-md5
-(type your password)
-wkt keytab
-quit
-</code></pre>
-<p>(for more info see <a href="https://kb.iu.edu/d/aumh" target="_blank" rel="noopener">here</a>). Now the keytab file in your home directory contains your encrypted passwords for access to CERN’s and CLASSE’s networks.</p>
-</li>
-<li>
-<p>Use the keytab file to authenticate to <code>kinit</code>. The command <code>$ kinit —afslog -kt ~/keytab user@CERN.CH</code> or <code>$ kinit -kt ~/keytab user@CLASSE.CORNELL.EDU</code> should now grant you Kerberos tickets without having to type your password. Note that you could include this command in (start-up) scripts, so that you always have a connection on. Neat!</p>
-</li>
-<li>
-<p>SSH to remote machine as usual. For example, <code>ssh user@lxplus.cern.ch</code> or <code>ssh user@lnx201.classe.cornell.edu</code>. Again your password shouldn’t be asked for anymore.</p>
-</li>
-<li>
-<p>Remember to set the permissions of the keytab file to read-only by you! Anyone with read access to this file could log in to your accounts, so make sure it can only be readable by you.</p>
-</li>
-</ol>
-<p>More (partial) info: <a href="http://linux.web.cern.ch/linux/docs/kerberos-access.shtml">http://linux.web.cern.ch/linux/docs/kerberos-access.shtml</a></p>
+<p>(where principal is your Keberos username and REALM the realm where you want to connect) then macOS will ask for your Keberos password the first time and store it in the Keychain. Subsequent kinit invocations will automatically retrieve the password from the Keychain (even if you don&rsquo;t use the <code>--keychain</code> option), so you don&rsquo;t have to type it ever again! In my opinion this is a much easier solution than the cumbersome way to retrieve proper Kerberos + keytab authentication described in my <a href="/post/ssh_kerberos_keytabs_macos/">previous post</a>, though of course keytabs work across OS&rsquo;s while this is a macOS solution only.</p>
+<p>Additionally, you can use this <a href="https://hamstergene.github.io/macapps/ticket-renewer/" target="_blank" rel="noopener">Kerberos Ticket Autorenewal</a> app to automatically renew your existing tickets, up to the maximum ticket renewability time window defined by the realm (typically a week or so).</p>
+<p>Source: <a href="https://superuser.com/a/950769">https://superuser.com/a/950769</a></p>
 
     </div>
 
