@@ -33,6 +33,54 @@
     </item>
     
     <item>
+      <title>Search for inelastic dark matter in events with two displaced muons and missing transverse momentum in proton-proton collisions at $\sqrt{s} = 13$ TeV</title>
+      <link>https://frankenthal.dev/publication/cm-si-dm-2023/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/cm-si-dm-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of the rare decay of the $η$ meson to four muons</title>
+      <link>https://frankenthal.dev/publication/eta-4-mu-2023/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/eta-4-mu-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shedding light on X17: community report</title>
+      <link>https://frankenthal.dev/publication/x-17-report-2023/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/x-17-report-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross-section measurement of two-photon in-flight annihilation of positrons at $\sqrt{s} = 20$ MeV with the PADME detector</title>
+      <link>https://frankenthal.dev/publication/padmexsec-2023/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/padmexsec-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Commissioning of the PADME experiment with a positron beam</title>
+      <link>https://frankenthal.dev/publication/padmecomissioning-2022/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/padmecomissioning-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The PADME beam line Monte Carlo simulation</title>
+      <link>https://frankenthal.dev/publication/padmebeamline-2022/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://frankenthal.dev/publication/padmebeamline-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Kerberos and SSH Keys with macOS Keychain</title>
       <link>https://frankenthal.dev/post/kerberos-ssh-keys-with-keychain/</link>
       <pubDate>Mon, 25 Jan 2021 21:04:07 -0500</pubDate>
@@ -814,10 +862,10 @@ quit
     </item>
     
     <item>
-      <title>The calorimeter system of the new muon g -2 experiment at Fermilab</title>
-      <link>https://frankenthal.dev/publication/alonzi-2016-vos/</link>
+      <title>The Calorimeter System of the New Muon g-2 Experiment at Fermilab</title>
+      <link>https://frankenthal.dev/publication/alonzi-2016718/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://frankenthal.dev/publication/alonzi-2016-vos/</guid>
+      <guid>https://frankenthal.dev/publication/alonzi-2016718/</guid>
       <description></description>
     </item>
     
