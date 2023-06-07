@@ -5,12 +5,287 @@
     <link>https://frankenthal.dev/post/</link>
       <atom:link href="https://frankenthal.dev/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 25 Jan 2021 21:04:07 -0500</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Mar 2023 18:41:22 -0400</lastBuildDate>
     <image>
       <url>https://frankenthal.dev/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://frankenthal.dev/post/</link>
     </image>
+    
+    <item>
+      <title>Fishing for dark matter using displaced muons</title>
+      <link>https://frankenthal.dev/post/inelastic-dark-matter-cms/</link>
+      <pubDate>Mon, 20 Mar 2023 18:41:22 -0400</pubDate>
+      <guid>https://frankenthal.dev/post/inelastic-dark-matter-cms/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;(Originally published as a &lt;a href=&#34;https://cms.cern/news/fishing-dark-matter-using-displaced-muons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CMS Physics Briefing&lt;/a&gt;)&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/EXO-20-010_4_hu83105ff17da6a29571567d3d9ff23ed2_193647_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/EXO-20-010_4_hu83105ff17da6a29571567d3d9ff23ed2_193647_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;750&#34; height=&#34;329&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Dark matter is mysterious. In some ways, we know a lot about it, including its average density in the universe and upper limits for how strongly the dark matter particles might interact with each other or with “normal” Standard Model particles. In other ways, however, we haven’t even scratched the surface of the “dark world”. In particular, we don’t know what kind of particle(s) makes up all of the dark matter whose gravitational effects are clearly seen across the universe. The strategy, therefore, is to make the net we cast as wide as possible, in the hope of catching an elusive sign of those subatomic dark matter particles.&lt;/p&gt;
+&lt;p&gt;CMS physicists recently completed the first search, at the LHC, in the context of the inelastic dark matter model (iDM). In this model (a well-motivated guess for what dark matter &lt;em&gt;might&lt;/em&gt; be), a dark matter particle can be produced in a proton-proton (pp) collision, travel some distance in our detector, and eventually decay into a pair of muons, which are heavier cousins of the electron. Three distinct features in the iDM model help us to separate such a dark matter signal from look-alike Standard Model processes (“background”).&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;The missing transverse momentum&lt;/ins&gt;: In an LHC pp collision, the two protons hit each other head-on, with zero net transverse momentum. Therefore, conservation of momentum (as taught in introductory physics classes) implies that there must be zero net transverse momentum after the collision. If we add up the momenta of all the particles that we observe and it does &lt;em&gt;not&lt;/em&gt; add up to zero, then we have a good sign that something else (dark matter, hopefully) was produced and carried away the “missing” momentum.&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;A displaced dimuon vertex&lt;/ins&gt;: One of the new particles predicted by the iDM model is “long-lived”, meaning that it can survive long enough to travel relatively far in our detector, before decaying into the two muons. This means that the origin of the muon tracks will be “displaced” with respect to the pp collision point, looking as if they popped out of thin air!&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;Close-by muon tracks&lt;/ins&gt;: Even though “muon” is literally the middle name of the Compact Muon Solenoid experiment, finding the two muons emitted by iDM particles is challenging, because they are expected to be very close to each other (nearly overlapping) and have relatively low energies. On the other hand, these features make them different from most other collisions (“events”) with muons.&lt;/p&gt;
+&lt;p&gt;To maximize our ability to find displaced muons, we followed a strategy similar to that used by a &lt;a href=&#34;https://cms.cern/news/detector-far-far-away-searching-elusive-long-lived-travellers-tracing-pairs-muons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;previous CMS analysis&lt;/a&gt;. Using complementary information from the silicon tracker (the innermost detector of CMS) and the muon system (the outermost detectors), we can look for muons with a wide range of displacements (distance between the dimuon vertex and the pp collision point), as shown in Fig. 1.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-bfigure-1b-the-efficiency-of-the-displaced-reconstruction-algorithm-red-is-much-better-than-that-of-the-standard-reconstruction-blue-so-that-dimuons-from-long-lived-dark-matter-particles-can-be-identified-much-better-especially-if-produced-between-the-external-radii-of-the-tracker-and-of-the-muon-detectors-dashed-gray-lines&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/comp_dsa_gm_vs_vxy_v4_markersSUBfig1_huf9942db636a1a46d9881f6d6c5ad1481_1457627_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;&amp;lt;b&amp;gt;FIGURE 1:&amp;lt;/b&amp;gt; The efficiency of the “displaced reconstruction” algorithm (red) is much better than that of the standard reconstruction (blue), so that dimuons from long-lived dark matter particles can be identified much better, especially if produced between the external radii of the tracker and of the muon detectors (dashed gray lines).&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/comp_dsa_gm_vs_vxy_v4_markersSUBfig1_huf9942db636a1a46d9881f6d6c5ad1481_1457627_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;7874&#34; height=&#34;6486&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;b&gt;FIGURE 1:&lt;/b&gt; The efficiency of the “displaced reconstruction” algorithm (red) is much better than that of the standard reconstruction (blue), so that dimuons from long-lived dark matter particles can be identified much better, especially if produced between the external radii of the tracker and of the muon detectors (dashed gray lines).
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;As illustrated by the event display shown in Fig. 2, the iDM features are so distinct that, out of the billions of proton-proton collisions recorded by CMS, less than 4 events are expected to survive these “selection criteria”. This event is also shown in the header image. In the transverse view (right), it is clear that the muons were produced some distance away from the center of the detector.&lt;/p&gt;
+&lt;iframe height=&#34;526&#34; loading=&#34;lazy&#34; src=&#34;https://cms3d.web.cern.ch/EXO-20-010-embedded/&#34; style=&#34;border: none;&#34; align=&#34;middle&#34; width=&#34;700&#34;&gt;&lt;/iframe&gt; &lt;p style=&#34;padding-top: 2%&#34;&gt; &lt;figcaption&gt;&lt;b&gt;FIGURE 2:&lt;/b&gt; Event display showing an iDM candidate with two muons (red) and missing transverse momentum (purple). You can play with the event display also &lt;a href=&#34;https://cms3d.web.cern.ch/EXO-20-010/&#34;&gt;here&lt;/a&gt; in a separate page.&lt;/figcaption&gt;&lt;/p&gt;
+&lt;p&gt;Figure 3 shows that the measured muon displacement distribution agrees very well with the “background” expected from Standard Model events. This means that we do not see any evidence that elusive dark matter particles contribute to the observed events. In other words, our net came up empty this time, despite having been optimized over several years to be as sensitive as possible to the iDM particles. The good news is that there are many more kinds of fish in the theoretical sea, and many other ideas for how to snare dark matter in the CMS detector! Stay tuned to the next episodes.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-bfigure-3b-the-measured-muon-displacement-distribution-black-circles-agrees-well-with-the-background-standard-model-expectation-red-histogram-with-the-dashed-region-showing-the-uncertainty-meaning-that-we-do-not-see-any-signal-of-dark-matter-particles-represented-by-the-magenta-green-and-blue-lines-for-three-different-idm-scenarios&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/Fig3_hu7160147e29ffde97894f03acf63c6043_233745_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;&amp;lt;b&amp;gt;FIGURE 3:&amp;lt;/b&amp;gt; The measured muon displacement distribution (black circles) agrees well with the “background” Standard Model expectation (red histogram, with the dashed region showing the uncertainty), meaning that we do not see any signal of dark matter particles (represented by the magenta, green, and blue lines for three different iDM scenarios).&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/inelastic-dark-matter-cms/Fig3_hu7160147e29ffde97894f03acf63c6043_233745_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2218&#34; height=&#34;1826&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;b&gt;FIGURE 3:&lt;/b&gt; The measured muon displacement distribution (black circles) agrees well with the “background” Standard Model expectation (red histogram, with the dashed region showing the uncertainty), meaning that we do not see any signal of dark matter particles (represented by the magenta, green, and blue lines for three different iDM scenarios).
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>What the eta meson does when no one&#39;s looking</title>
+      <link>https://frankenthal.dev/post/eta-meson-four-muons/</link>
+      <pubDate>Tue, 14 Mar 2023 19:17:53 -0500</pubDate>
+      <guid>https://frankenthal.dev/post/eta-meson-four-muons/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;(Originally published as a &lt;a href=&#34;https://cms.cern/news/what-eta-meson-does-when-no-ones-looking&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CMS Physics Briefing&lt;/a&gt;)&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/eta-meson-four-muons/BPH-22-003_1_hu33e20fd730803fc37737e8a3a45f7d41_271873_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/eta-meson-four-muons/BPH-22-003_1_hu33e20fd730803fc37737e8a3a45f7d41_271873_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;750&#34; height=&#34;480&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The amount of data that CMS has collected so far is truly astounding, thanks to the very large number of proton-proton collisions that the LHC has provided, over more than a decade, and to the large rate of events that CMS can record. And yet, even with so much data, some physics processes are so rare that they remain almost invisible. The decay of the $\eta$ (pronounced “eta”) meson into four muons (never seen until now) is a good example of such rare processes. A new CMS analysis has just resulted in its first observation, with a significance that exceeds the &lt;a href=&#34;https://home.web.cern.ch/resources/faqs/five-sigma&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;famous 5 sigma threshold&lt;/a&gt;. CMS also measured the corresponding branching fraction (the probability that the $\eta$ meson selects this particular channel to decay) to be $5 \times 10^{-9}$, a tiny number. This means that the four-muon decay of the $\eta$ happens only five times for every billion decays, so one really has to look hard for it.&lt;/p&gt;
+&lt;p&gt;The technique that enabled the observation of such a rare decay goes by the name of data scouting. The core tenet is that the fundamental limitation of data collection in CMS is not the &lt;em&gt;number of events per second&lt;/em&gt;  that can be recorded, but the &lt;em&gt;amount of data&lt;/em&gt; that can be transferred to permanent storage. In other words, the data bandwidth bottleneck (well known to internet users around the world) leads to a smaller number of collected events if one insists on keeping all the information that exists in the events: every electron, muon, photon, and all the other particles produced in the proton-proton collision. This limitation implies that a lot of (interesting) events are discarded.&lt;/p&gt;
+&lt;p&gt;Data scouting neatly overcomes this limitation by only recording a fraction of the information. For example, we can decide that we only record the muons, in which case the size of each event is substantially reduced and, hence, we can store a lot more events. Figure 1 shows such an event, presenting a candidate four-muon $\eta$ decay. Of course, in this case one can only study physics processes leading to muons, but that’s ok because, luckily, that already covers a lot of interesting physics topics.&lt;/p&gt;
+&lt;iframe height=&#34;526&#34; loading=&#34;lazy&#34; src=&#34;https://cms3d.web.cern.ch/BPH-22-003-embedded/&#34; style=&#34;border: none;&#34; align=&#34;middle&#34; width=&#34;700&#34;&gt;&lt;/iframe&gt; &lt;p style=&#34;padding-top: 2%&#34;&gt; &lt;figcaption&gt;&lt;b&gt;FIGURE 1:&lt;/b&gt; An event seen in the CMS detector in which a candidate $\eta$ meson is produced and decays into four muons (red lines). Try to zoom and rotate the interactive event display on &lt;a href=&#34;https://cms3d.web.cern.ch/BPH-22-003/&#34;&gt;this separate page&lt;/a&gt;. &lt;/figcaption&gt;&lt;/p&gt;
+&lt;p&gt;In practice, by using the scouting technique CMS can use significantly looser momentum thresholds in the double-muon triggers without exceeding the available data bandwidth. The double-muon scouting triggers require both muons to have a transverse momentum larger than 3 GeV, a much smaller threshold than the “standard” triggers (with typical thresholds of 17 GeV on one muon and 8 GeV on the other). This is particularly important for studies of very light particles, such as the $\eta$ meson, which has a mass of only 0.55 GeV. These mesons are copiously produced in the LHC collisions but their yields fall sharply with transverse momentum, so that they are almost nonexistent in the event samples collected with the standard triggers. Lowering the dimuon trigger thresholds is absolutely crucial to observe the very rare decays of the $\eta$.&lt;/p&gt;
+&lt;p&gt;The four-muon $\eta$ decay belongs to the class of “Dalitz decays”, where a virtual photon is emitted and converts to a pair of leptons. Actually, it is a “double Dalitz decay”, because two virtual photons are emitted, leading to the four muons, as illustrated in Fig. 2. Such rare decays are interesting for several reasons: they could be sensitive to contributions from unknown particles; the coupling of the photon to the $\eta$ meson and other light mesons is one of the many ingredients entering the calculation of the &lt;a href=&#34;https://www.symmetrymagazine.org/collection/muon-g-2-collection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;anomalous magnetic moment of the muon&lt;/a&gt;; and one can use these rare decays as a test bed in searches for physics beyond what is known in the standard model of particle physics.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-bfigure-2b-feynman-diagrams-representing-the-eta-meson-decay-into-two-leptons-plus-a-photon-left-and-four-leptons-right-these-decays-belong-to-the-class-of-dalitz-decays-where-one-or-more-photons-are-emitted-before-converting-to-a-pair-of-leptons&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/eta-meson-four-muons/Fig2_huff4dec41cfb6392f89959dc71d0efa56_252247_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;&amp;lt;b&amp;gt;FIGURE 2:&amp;lt;/b&amp;gt; Feynman diagrams representing the $\eta$ meson decay into two leptons plus a photon (left), and four leptons (right). These decays belong to the class of “Dalitz decays”, where one or more photons are emitted before converting to a pair of leptons.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/eta-meson-four-muons/Fig2_huff4dec41cfb6392f89959dc71d0efa56_252247_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2794&#34; height=&#34;738&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;b&gt;FIGURE 2:&lt;/b&gt; Feynman diagrams representing the $\eta$ meson decay into two leptons plus a photon (left), and four leptons (right). These decays belong to the class of “Dalitz decays”, where one or more photons are emitted before converting to a pair of leptons.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Using the scouting dataset, a clear peak is seen in the four-muon mass spectrum, shown in Fig. 3. The peak is located at the mass of the $\eta$ meson, which is, of course, no coincidence! About 50 events contribute to the peak. The branching fraction of the newly observed decay channel can be measured with respect to the well-known two-muon $\eta$ decay, also seen (much more easily) in the data. The only important ingredient needed for that measurement is a good understanding of the detection efficiencies, for each of the two decay channels. They were evaluated using a detailed simulation of the CMS detector response to the two processes. The measurement gives a branching fraction of the $\eta$ to four muons decay channel of $(5.0 \pm 1.3) \times 10^{-9}$, a value in agreement with theoretical estimates, within the quoted uncertainties. Future measurements, to be made with scouting data samples being collected in Run 3, will have a significantly improved precision, enabling a more refined comparison with the predictions.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-bfigure-3b-the-observed-mass-distribution-of-four-muon-combinations-in-data-with-the-fit-results-overlaid-black-points-denote-the-data-the-green-curve-is-the-background-component-of-the-fit-the-red-curve-is-the-signal-component-and-the-blue-curve-is-their-sum&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://frankenthal.dev/post/eta-meson-four-muons/Fig3_hud9d7ac7d8a17402c6ac6a9965502db6a_73874_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;&amp;lt;b&amp;gt;FIGURE 3:&amp;lt;/b&amp;gt; The observed mass distribution of four-muon combinations in data with the fit results overlaid. Black points denote the data; the green curve is the background component of the fit, the red curve is the signal component, and the blue curve is their sum.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://frankenthal.dev/post/eta-meson-four-muons/Fig3_hud9d7ac7d8a17402c6ac6a9965502db6a_73874_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;781&#34; height=&#34;648&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;b&gt;FIGURE 3:&lt;/b&gt; The observed mass distribution of four-muon combinations in data with the fit results overlaid. Black points denote the data; the green curve is the background component of the fit, the red curve is the signal component, and the blue curve is their sum.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;This observation of a new decay channel and the measurement of its tiny branching fraction constitute a clear example of the immense value of scouting datasets in CMS.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Kerberos and SSH Keys with macOS Keychain</title>
